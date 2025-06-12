@@ -34,7 +34,7 @@ Em seguida, para aprender boas práticas na redação de códigos é sugerido o 
 ## Desafio: Aplicação de lógica condicional
 
 
-### Atividades Principais
+### Atividade Principal
 
    - Construa manualmente um conjunto simplificado de dados relevante ao seu trabalho.
    - Utilize operadores relacionais e condicionais (if/else) para criar uma variável categórica baseada em critérios definidos por você (por exemplo: níveis de prioridade, faixas de valores etc.).
