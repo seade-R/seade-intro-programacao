@@ -48,7 +48,7 @@ Lembre-se de que todos os problemas que surgirem durante os desafios são bem-vi
 
 Para o desafio dessa semana, revisaremos os principais verbos do `dplyr`.
 
-### Atividades Principais
+### Atividade Principal
 
 Escolha uma base de dados utilizada em seu ambiente profissional e realize as seguintes atividades utilizando o pacote dplyr:
 
