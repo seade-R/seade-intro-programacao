@@ -44,7 +44,7 @@ Em seguida, para aprender boas práticas na redação de códigos é sugerido o 
 
 Implemente uma estrutura de repetição simples (for) combinada com condicionais (if/else) para automatizar a criação ou transformação de variáveis no seu conjunto de dados. Documente claramente cada etapa realizada.
 
-### Documentação:
+### Documentação
 Crie um arquivo em formato .R (ou opcionalmente .Rmd), com comentários detalhados sobre todas as decisões e etapas realizadas.
 
 
