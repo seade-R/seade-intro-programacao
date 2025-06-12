@@ -40,3 +40,11 @@ O curso oferece uma iniciação à lógica de programação e ao uso da linguage
 [The Big Book of R](https://www.bigbookofr.com/index.html) é um livro sobre os muitos livros gratuitos em R que você encontra na internet sobre temas variados e vale muito a pena dar uma olhada.
 
 [The R Graph Library](https://r-graph-gallery.com/) é uma coleção de gráficos feitos em R, sempre com o código reprodutível disponível. Ótima fonte para pensar como melhor criar visualizações de seus dados. A galeria tem um foco no tidyverse e ggplot2.
+
+
+Caso, posteriormente, deseje avançar em seus estudos, recomendamos também:
+
+- Burns, Patrick (2011). The R Inferno. Ed: Lulu.com. Disponível gratuitamente [aqui](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf).
+- Wickham, Hadley (2019). Advanced R. Ed: Chapman and Hall/CRC. Disponível gratuitamente [aqui](https://adv-r.hadley.nz/).
+
+  
