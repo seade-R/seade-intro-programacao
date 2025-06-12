@@ -46,7 +46,7 @@ Para esta primeira semana, sugerimos que você já comece a refletir sobre quais
 
 Lembre-se de que todos os problemas que surgirem durante os desafios são bem-vindos e importantes para nosso processo de aprendizado. Não hesite em trazer suas dúvidas, dificuldades ou questões específicas relacionadas ao uso dos seus dados para os nossos encontros. Esses momentos de discussão coletiva têm o objetivo de auxiliar diretamente no desenvolvimento dos seus projetos, esclarecendo dúvidas práticas e promovendo a troca de experiências entre colegas.
 
-Para o desafio dessa semana, revisaremos os principais verbos do _dplyr_.
+Para o desafio dessa semana, revisaremos os principais verbos do `dplyr`.
 
 ### Atividades Principais
 
