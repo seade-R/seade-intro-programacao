@@ -30,3 +30,21 @@ Uma boa leitura para acompanhar este pedaço do curso são as partes II e III do
 
 Em seguida, para aprender boas práticas na redação de códigos é sugerido o [capítulo 4](https://r4ds.had.co.nz/workflow-basics.html) do livro *R for Data Science*.
 
+
+## Desafio: Aplicação de lógica condicional
+
+
+### Atividades Principais
+
+   - Construa manualmente um conjunto simplificado de dados relevante ao seu trabalho.
+   - Utilize operadores relacionais e condicionais (if/else) para criar uma variável categórica baseada em critérios definidos por você (por exemplo: níveis de prioridade, faixas de valores etc.).
+   - Produza ao menos duas tabelas com a função básica table() para apresentar a relação da nova variável com variáveis originais.
+
+### Atividade Opcional
+
+Implemente uma estrutura de repetição simples (for) combinada com condicionais (if/else) para automatizar a criação ou transformação de variáveis no seu conjunto de dados. Documente claramente cada etapa realizada.
+
+### Documentação:
+Crie um arquivo em formato .R (ou opcionalmente .Rmd), com comentários detalhados sobre todas as decisões e etapas realizadas.
+
+
