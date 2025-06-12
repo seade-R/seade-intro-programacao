@@ -22,3 +22,25 @@ No primeiro encontro trabalhamos com a gramática do pacote `dplyr` para manipul
 ## Dica de Leitura
 
 Os [Capítulo 5](https://r4ds.had.co.nz/transform.html), [Capítulo 11](https://r4ds.had.co.nz/data-import.html) e [Capítulo 12](https://r4ds.had.co.nz/tidy-data.html) de R for Data Science, de Wickham e Grolemund, são excelentes leituras para acompanhar essa aula.
+
+
+## Desafio: Importação, limpeza e análise exploratória básica
+
+
+### Atividades Principais
+
+  - Escolha uma base real utilizada frequentemente no seu trabalho, armazenada em formato diferente de CSV (por exemplo, Excel ou SPSS).
+  - Importe os dados utilizando as funções apropriadas (read_excel(), read_sav()).
+  - Com o pacote janitor realize:
+        - Limpeza dos nomes das variáveis.
+        - Criação de tabelas de frequência simples e cruzadas para análise inicial.
+        - Transformação de pelo menos uma variável textual em fator ordenado (factor() e recode()).
+
+
+### Atividade Opcional
+
+Crie uma função personalizada que automatize o processo básico de importação e limpeza dos dados (nomes e fatores) para futuras bases similares. Documente cuidadosamente cada elemento dessa função.
+
+### Documentação
+
+Utilize um arquivo .R (ou opcionalmente .Rmd), incluindo comentários detalhados explicando cada passo.
