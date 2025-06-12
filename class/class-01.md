@@ -35,7 +35,7 @@ Durante a leitura, não se preocupe se você sentir dificuldade em algum tópico
 Nosso curso será inteiramente feito via Github. Caso não esteja acostumado com plataformas de versionamento e compartilhamento de código, recomendo as seguintes leituras adicionais: [Documentação de introdução ao GitHub](https://docs.github.com/pt/get-started) e [Noções Básicas de Github](https://docs.github.com/pt/get-started/git-basics). Se preferir algo mais didático, recomendo o seguinte [curso da Microsoft](https://learn.microsoft.com/pt-br/training/modules/intro-to-git/0-introduction).
 
 
-## Desafio: seus problemas são bem-vindos
+## Desafio: Manipulação de dados com dplyr
 
 
 O objetivo desses desafios semanais é permitir que você coloque em prática e consolide os conteúdos apresentados em cada aula. A cada semana teremos um novo desafio, que deverá ser realizado e entregue até o nosso próximo encontro.
@@ -48,7 +48,7 @@ Lembre-se de que todos os problemas que surgirem durante os desafios são bem-vi
 
 Para o desafio dessa semana, revisaremos os principais verbos do _dplyr_.
 
-### Atividades Principais:
+### Atividades Principais
 
 Escolha uma base de dados utilizada em seu ambiente profissional e realize as seguintes atividades utilizando o pacote dplyr:
 
@@ -58,11 +58,11 @@ Escolha uma base de dados utilizada em seu ambiente profissional e realize as se
   - Produza uma tabela com agrupamentos e resumos usando group_by() e summarise().    
   - Ordene os resultados com a função arrange().
     
-### Pergunta Opcional:
+### Atividade Opcional
 
 Combine pelo menos quatro funções diferentes do dplyr em uma única operação encadeada utilizando o operador pipe (%>%). Descreva detalhadamente no script cada etapa realizada e o motivo das escolhas feitas.
 
-### Documentação:
+### Documentação
 
 Utilize um arquivo em formato .R (ou, opcionalmente, .Rmd) e inclua comentários detalhados descrevendo cada passo do código.
 
