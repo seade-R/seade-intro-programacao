@@ -37,7 +37,18 @@ Nosso curso será inteiramente feito via Github. Caso não esteja acostumado com
 
 ## Desafio: seus problemas são bem-vindos
 
-Treine o que aprendeu em uma base de dados que utiliza em seu trabalho. Aplique os principais verbos do _dplyr_ e documente os passos em um script.
+
+O objetivo desses desafios semanais é permitir que você coloque em prática e consolide os conteúdos apresentados em cada aula. A cada semana teremos um novo desafio, que deverá ser realizado e entregue até o nosso próximo encontro.
+
+Por ser um curso prático, recomendamos fortemente que você utilize bases de dados reais, que façam parte da sua rotina profissional. Dessa forma, será possível aplicar diretamente o que foi aprendido em situações concretas, facilitando a absorção e a relevância do aprendizado.
+
+Para esta primeira semana, sugerimos que você já comece a refletir sobre quais conjuntos de dados utilizará ao longo do curso, garantindo uma experiência prática mais proveitosa e consistente.
+
+Lembre-se de que todos os problemas que surgirem durante os desafios são bem-vindos e importantes para nosso processo de aprendizado. Não hesite em trazer suas dúvidas, dificuldades ou questões específicas relacionadas ao uso dos seus dados para os nossos encontros. Esses momentos de discussão coletiva têm o objetivo de auxiliar diretamente no desenvolvimento dos seus projetos, esclarecendo dúvidas práticas e promovendo a troca de experiências entre colegas.
+
+Para o desafio dessa semana, revisaremos os principais verbos do _dplyr_.
+
+### Atividades Principais:
 
 Escolha uma base de dados utilizada em seu ambiente profissional e realize as seguintes atividades utilizando o pacote dplyr:
 
@@ -47,12 +58,11 @@ Escolha uma base de dados utilizada em seu ambiente profissional e realize as se
   - Produza uma tabela com agrupamentos e resumos usando group_by() e summarise().    
   - Ordene os resultados com a função arrange().
     
-Documentação:
-Utilize um arquivo em formato .R (ou, opcionalmente, .Rmd) e inclua comentários detalhados descrevendo cada passo do código.
-
-Pergunta Opcional:
+### Pergunta Opcional:
 
 Combine pelo menos quatro funções diferentes do dplyr em uma única operação encadeada utilizando o operador pipe (%>%). Descreva detalhadamente no script cada etapa realizada e o motivo das escolhas feitas.
 
-Traga seus desafios para nossos momentos de discussão coletiva.
+### Documentação:
+
+Utilize um arquivo em formato .R (ou, opcionalmente, .Rmd) e inclua comentários detalhados descrevendo cada passo do código.
 
