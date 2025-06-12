@@ -18,11 +18,13 @@ Neste primeiro encontro vamos conhecer o ambiente de programação de R e o soft
 
 Lembre-se: é mais importante aprender com calma do que concluir os tutoriais. Siga seu ritmo.
 
-## Desafio: seus problemas são bem-vindos
+## Opcional
 
-Treine o que aprendeu em uma base de dados que utiliza em seu trabalho. Aplique os principais verbos do _dplyr_ e documente os passos em um script.
+**Uma forma eficiente de aprender línguas:** aprender uma nova língua (inclusive linguagens de programação!) pode parecer uma tarefa difícil ou intimidadora no começo. Entretanto, usando a lógica da eficiência de Pareto, você pode rapidamente dominar o essencial. Para entender melhor essa abordagem, confira os vídeos [Fastest Way to Learn ANY Programming Language: 80-20 rule](https://www.youtube.com/watch?v=14BL_FwQCpM&si=CcEPRASj438IfAXi) e [Learn Any Programming Language In 3 Hours!](https://www.youtube.com/watch?v=7SKVQyA4TjU).  
 
-Traga seus desafios para nossos momentos de discussão coletiva.
+Lembre-se: o fundamental é dominar bem o núcleo básico da língua, usando-o como base para expandir gradualmente seu conhecimento através da prática contínua.
+
+_Para pensar_: caso você queira, no final da aula, veja este [tutorial](/tutorial/tutorial-atribuicao-variavel.md) para entender por que preferimos em R o símbolo '<-' para a criação de objetos, ao invés de '='. 
 
 ## Dica de Leitura
 
@@ -33,11 +35,24 @@ Durante a leitura, não se preocupe se você sentir dificuldade em algum tópico
 Nosso curso será inteiramente feito via Github. Caso não esteja acostumado com plataformas de versionamento e compartilhamento de código, recomendo as seguintes leituras adicionais: [Documentação de introdução ao GitHub](https://docs.github.com/pt/get-started) e [Noções Básicas de Github](https://docs.github.com/pt/get-started/git-basics). Se preferir algo mais didático, recomendo o seguinte [curso da Microsoft](https://learn.microsoft.com/pt-br/training/modules/intro-to-git/0-introduction).
 
 
-## Opcional
+## Desafio: seus problemas são bem-vindos
 
-**Uma forma eficiente de aprender línguas:** aprender uma nova língua (inclusive linguagens de programação!) pode parecer uma tarefa difícil ou intimidadora no começo. Entretanto, usando a lógica da eficiência de Pareto, você pode rapidamente dominar o essencial. Para entender melhor essa abordagem, confira os vídeos [Fastest Way to Learn ANY Programming Language: 80-20 rule](https://www.youtube.com/watch?v=14BL_FwQCpM&si=CcEPRASj438IfAXi) e [Learn Any Programming Language In 3 Hours!](https://www.youtube.com/watch?v=7SKVQyA4TjU).  
+Treine o que aprendeu em uma base de dados que utiliza em seu trabalho. Aplique os principais verbos do _dplyr_ e documente os passos em um script.
 
-Lembre-se: o fundamental é dominar bem o núcleo básico da língua, usando-o como base para expandir gradualmente seu conhecimento através da prática contínua.
+Escolha uma base de dados utilizada em seu ambiente profissional e realize as seguintes atividades utilizando o pacote dplyr:
 
-_Para pensar_: caso você queira, no final da aula, veja este [tutorial](/tutorial/tutorial-atribuicao-variavel.md) para entender por que preferimos em R o símbolo '<-' para a criação de objetos, ao invés de '='. 
+  - Renomeie variáveis para tornar seus nomes mais claros e informativos.
+  - Crie pelo menos duas variáveis derivadas usando mutate().
+  - Utilize filter() para criar subconjuntos específicos dos dados.
+  - Produza uma tabela com agrupamentos e resumos usando group_by() e summarise().    
+  - Ordene os resultados com a função arrange().
+    
+Documentação:
+Utilize um arquivo em formato .R (ou, opcionalmente, .Rmd) e inclua comentários detalhados descrevendo cada passo do código.
+
+Pergunta Opcional:
+
+Combine pelo menos quatro funções diferentes do dplyr em uma única operação encadeada utilizando o operador pipe (%>%). Descreva detalhadamente no script cada etapa realizada e o motivo das escolhas feitas.
+
+Traga seus desafios para nossos momentos de discussão coletiva.
 
