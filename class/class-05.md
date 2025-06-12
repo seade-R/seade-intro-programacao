@@ -45,3 +45,25 @@ Criamos um formulário para que você possa avaliar a qualidade do curso ofereci
 O livro 'R for Data Science' tem excelente capítulo dados relacionais ([Capítulo 13](https://r4ds.had.co.nz/relational-data.html)).
 
 Para a integração entre R e Power BI, convém ler a documentação da Microsoft: (1) [Executar scripts do R no Power BI Desktop](https://docs.microsoft.com/pt-br/power-bi/connect-data/desktop-r-scripts); (2) [Uso do R no Editor do Power Query](https://docs.microsoft.com/pt-br/power-bi/connect-data/desktop-r-in-query-editor); (3) [Criar visuais do Power BI usando o R](https://docs.microsoft.com/pt-br/power-bi/create-reports/desktop-r-visuals).
+
+
+## Desafio: Integração e análise de bases relacionais
+
+
+### Atividade Principal
+
+  - Escolha ao menos duas bases que possam ser conectadas através de variáveis-chave.
+  - Realize diferentes tipos de junções (inner_join, left_join, right_join), indicando qual das opções foi a mais adequada e justifique claramente sua escolha.
+  - Visualize as diferenças entre as junções utilizando tabelas ou gráficos simples (com funções dos pacotes janitor ou ggplot2).
+
+
+### Atividade Opcional 
+
+  - Exporte e visualize os resultados obtidos no Power BI usando scripts do R.
+  - Realize uma junção de bases utilizando múltiplas variáveis-chave simultaneamente. Descreva claramente no script o motivo dessa abordagem e os desafios técnicos encontrados durante o processo.
+
+
+### Documentação
+
+Apresente claramente cada etapa da análise em um arquivo .R (ou opcionalmente .Rmd), detalhando todas as decisões tomadas e os resultados obtidos.
+
