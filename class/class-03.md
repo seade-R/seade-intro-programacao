@@ -26,15 +26,14 @@ Os [Capítulo 5](https://r4ds.had.co.nz/transform.html), [Capítulo 11](https://
 
 ## Desafio: Importação, limpeza e análise exploratória básica
 
-
 ### Atividades Principais
 
-  - Escolha uma base real utilizada frequentemente no seu trabalho, armazenada em formato diferente de CSV (por exemplo, Excel ou SPSS).
-  - Importe os dados utilizando as funções apropriadas (read_excel(), read_sav()).
-  - Com o pacote janitor realize:
-        - Limpeza dos nomes das variáveis.
-        - Criação de tabelas de frequência simples e cruzadas para análise inicial.
-        - Transformação de pelo menos uma variável textual em fator ordenado (factor() e recode()).
+- Escolha uma base real utilizada frequentemente no seu trabalho, armazenada em formato diferente de CSV (por exemplo, Excel ou SPSS).
+- Importe os dados utilizando as funções apropriadas (`read_excel()`, `read_sav()`).
+- Com o pacote `janitor`, realize:
+    - Limpeza dos nomes das variáveis.
+    - Criação de tabelas de frequência simples e cruzadas para análise inicial.
+    - Transformação de pelo menos uma variável textual em fator ordenado (`factor()` e `recode()`).
 
 
 ### Atividade Opcional
