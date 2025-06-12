@@ -29,3 +29,21 @@ A seguir, aprenderemos uma nova 'gramática' de R: a gramática de gráficos do 
 - Uma leitura alternativa e introdutória sobre `ggplot2` é o [Capítulo 3](https://r4ds.had.co.nz/data-visualisation.html) do livro 'R for Data Science'. Se o Tutorial 8 não foi suficiente para você aprender, recomendo esta leitura.
 
 - O livro 'R for Data Science' tem um excelente capítulo sobre Factors ([Capítulo 15](https://r4ds.had.co.nz/factors.html)).
+
+
+## Desafio: Visualizações com dados reais
+
+
+### Atividades Principais
+
+  - Utilize uma base própria e produza ao menos três gráficos diferentes usando diferentes geometrias do ggplot2 (`geom_bar()`, `geom_histogram()`, `geom_density()`, `geom_point()`, etc.).
+  -  Customize cada visualização (cores, títulos, eixos) para facilitar sua compreensão.
+  -  Para pelo menos um gráfico, combine previamente a manipulação dos dados com funções do pacote `dplyr` para melhorar a clareza do resultado final.
+
+### Atividade Opcional
+
+Crie um gráfico que utilize múltiplas camadas gráficas sobrepostas (diferentes geometrias), ajustando manualmente escalas, cores e temas (`theme()`, `scale_*`). Explique detalhadamente cada decisão tomada no processo.
+
+
+### Documentação
+Crie um arquivo .R (ou opcionalmente .Rmd), documentando detalhadamente as decisões gráficas e as manipulações prévias realizadas.
