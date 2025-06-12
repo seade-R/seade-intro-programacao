@@ -34,7 +34,7 @@ A seguir, aprenderemos uma nova 'gramática' de R: a gramática de gráficos do 
 ## Desafio: Visualizações com dados reais
 
 
-### Atividades Principais
+### Atividade Principal
 
   - Utilize uma base própria e produza ao menos três gráficos diferentes usando diferentes geometrias do ggplot2 (`geom_bar()`, `geom_histogram()`, `geom_density()`, `geom_point()`, etc.).
   -  Customize cada visualização (cores, títulos, eixos) para facilitar sua compreensão.
