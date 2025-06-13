@@ -20,8 +20,15 @@ A seguir, veremos em pequenos vídeos como integrar R e Power BI. Finalmente, pa
 
 ## Opcional
 
-5 - Para quem tiver interesse, o [Tutorial 12](/tutorial/tutorial-12.md), opcional, apresenta, com acompanhamento de vídeos curtos, as maneiras mais simples de como integrar R e Power BI.
+Os tutoriais a seguir são opcionais e foram preparados para quem quiser ir além dos conteúdos principais do curso:
 
+5 - [Tutorial 12](/tutorial/tutorial-12.md): Integração com Power BI.
+Neste tutorial, acompanhado de vídeos curtos, você verá as formas mais simples de integrar o R ao Power BI, permitindo importar, transformar e visualizar dados diretamente no Power BI usando scripts em R., opcional, apresenta, com acompanhamento de vídeos curtos, as maneiras mais simples de como integrar R e Power BI.
+
+6 - [Tutorial 13](/tutorial/tutorial-13.md): 
+ Neste tutorial de encerramento, o objetivo é reunir e articular várias técnicas aprendidas ao longo do curso, mostrando o fluxo completo de análise: limpeza, organização, tratamento de valores ausentes, identificação de problemas de estrutura nos dados e primeiros passos em análise exploratória e modelagem. O foco está em como pensar o processo e combinar diferentes etapas para extrair informações relevantes de conjuntos de dados complexos.
+
+ 
 ## Instalação do R e RStudio em sua máquina local
 
 Trabalhamos, ao longo de todo o curso, com RStudio instalado no servidor do SEADE. Agora, para que você possa seguir usando R em sua vida, você vai precisar instalar a ferramenta na sua máquina local, seu desktop pessoal ou notebook.
