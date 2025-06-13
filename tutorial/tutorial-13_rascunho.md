@@ -530,3 +530,4 @@ Agora você tem um arsenal completo para trabalhar com dados de qualquer tamanho
 
 A melhor parte? Você não precisa escolher apenas um! Use SQLite para organizar, DuckDB para analisar rapidamente, e duckplyr quando quiser manter seu código dplyr mas precisar de mais velocidade.
 
+Lembre-se: dados grandes não são mais desculpa para análises lentas. Com as ferramentas certas, você pode analisar milhões de registros no seu laptop!
