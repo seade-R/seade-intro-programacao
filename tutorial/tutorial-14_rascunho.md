@@ -391,7 +391,7 @@ smtp_send(
 )
 ```
 
-## Monitorando e debugando execuções automáticas
+## Monitorando e depurando execuções automáticas
 
 É importante saber se tudo está funcionando. Vamos melhorar nosso script com logs detalhados:
 
