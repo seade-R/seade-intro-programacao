@@ -8,7 +8,7 @@ A seguir, você poderá escolher um ou mais dos tutoriais opcionais, conforme se
 
 ## Roteiro
 
-0 - Às 8h30 faremos um encontro virtual (Teams) para falarmos dos objetivos de hoje e tirarmos dúvidas sobre a aula passada.
+<!--- 0 - Às 8h30 faremos um encontro virtual (Teams) para falarmos dos objetivos de hoje e tirarmos dúvidas sobre a aula passada. --->
 
 1 - Se deixou algum tutorial inacabado do encontro anterior, comece por ele. Caso contrário, prossiga.
 
@@ -48,9 +48,9 @@ A instalação é bastante fácil e, em geral, basta seguir as instruções da t
 
 3.  Uma vez instalados o R e o RStudio, basta abrir o RStudio e começar a criar seus projetos. Lembre-se que os pacotes que usamos ao longo do curso vão precisar ser instalados em sua máquina. Esse processo vai acontecer uma única vez e, nas próximas vezes que for usar o R em sua máquina, basta carregas as bibliotecas.
 
-## Avaliação do curso
+<!--- ## Avaliação do curso
 
-Criamos um formulário para que você possa avaliar a qualidade do curso oferecido. Assim, esperamos aprimorar os conteúdos e metodologia para as próximas edições. Acesse e preencha o formulário [aqui](https://forms.gle/DRwwt25QohxD4p596).
+Criamos um formulário para que você possa avaliar a qualidade do curso oferecido. Assim, esperamos aprimorar os conteúdos e metodologia para as próximas edições. Acesse e preencha o formulário [aqui](https://forms.gle/DRwwt25QohxD4p596). --->
 
 ## Dicas de Leitura
 
