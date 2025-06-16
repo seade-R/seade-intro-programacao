@@ -23,7 +23,7 @@ A seguir, você poderá escolher um ou mais dos tutoriais opcionais, conforme se
 Os tutoriais a seguir são opcionais e foram preparados para quem quiser ir além dos conteúdos principais do curso:
 
 5 - [Tutorial 9](/tutorial/tutorial-09.md): R Base.
-Para quem se sente confortável com o uso do R e a 'gramática' do `dplyr`, pode ser interessante retomar o Tutorial 9, que apresenta conceitos da gramática básica do R (ou 'R base').
+Para quem se sente confortável com o uso do R e a 'gramática' do `dplyr`, pode ser interessante retomar o Tutorial 9, que apresenta conceitos da gramática básica do R.
 
 6 - [Tutorial 12](/tutorial/tutorial-12.md): Integração com Power BI.
 Neste tutorial, acompanhado de vídeos curtos, você verá as formas mais simples de integrar o R ao Power BI, permitindo importar, transformar e visualizar dados diretamente no Power BI usando scripts em R., opcional, apresenta, com acompanhamento de vídeos curtos, as maneiras mais simples de como integrar R e Power BI.
