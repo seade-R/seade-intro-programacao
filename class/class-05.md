@@ -25,7 +25,12 @@ Os tutoriais a seguir são opcionais e foram preparados para quem quiser ir alé
 5 - [Tutorial 12](/tutorial/tutorial-12.md): Integração com Power BI.
 Neste tutorial, acompanhado de vídeos curtos, você verá as formas mais simples de integrar o R ao Power BI, permitindo importar, transformar e visualizar dados diretamente no Power BI usando scripts em R., opcional, apresenta, com acompanhamento de vídeos curtos, as maneiras mais simples de como integrar R e Power BI.
 
-6 - [Tutorial 14](/tutorial/tutorial-13.md): 
+6 - 
+
+7 - [Tutorial 14](/tutorial/tutorial-14.md): Relatórios Reproduzíveis com RMarkdown.
+Aprenda a automatizar relatórios combinando texto, código e dados atualizados em um único documento. O tutorial mostra como gerar análises dinâmicas, criar seções por grupo, agendar execuções automáticas e enviar relatórios por e-mail sem intervenção manual.
+
+8 - [Tutorial 15](/tutorial/tutorial-15.md): Análise de Dados do Início ao Fim.
  Neste tutorial de encerramento, o objetivo é reunir e articular várias técnicas aprendidas ao longo do curso, mostrando o fluxo completo de análise: limpeza, organização, tratamento de valores ausentes, identificação de problemas de estrutura nos dados e primeiros passos em análise exploratória e modelagem. O foco está em como pensar o processo e combinar diferentes etapas para extrair informações relevantes de conjuntos de dados complexos.
 
  
