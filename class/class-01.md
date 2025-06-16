@@ -6,7 +6,9 @@ Neste primeiro encontro vamos conhecer o ambiente de programação de R e o soft
 
 ## Roteiro
 
-1- Nos encontraremos em uma sala virtual (pelo Teams) às 13h30. Faremos uma breve apresentação das e dos participantes e conversaremos sobre o funcionamento do curso. Veremos como utilizar o RStudio no servidor da Fundação SEADE.
+<!--- 1- Nos encontraremos em uma sala virtual (pelo Teams) às 13h30. Faremos uma breve apresentação das e dos participantes e conversaremos sobre o funcionamento do curso. Veremos como utilizar o RStudio no servidor da Fundação SEADE. --->
+
+1 - Faremos uma breve apresentação das e dos participantes e conversaremos sobre o funcionamento do curso. Veremos como utilizar o RStudio no servidor da Fundação SEADE.
 
 2- Assista ao breve vídeo sobre a interface RStudio: https://www.youtube.com/watch?v=7yhw_xYWqlU
 
@@ -14,7 +16,9 @@ Neste primeiro encontro vamos conhecer o ambiente de programação de R e o soft
 
 4 - No [Tutorial 2](/tutorial/tutorial-02.md) veremos mais alguns aspectos básicos de manipulação de dados com _dplyr_. Utilizaremos dados de casos e óbitos de COVID-19 nos municípios do Estado de São Paulo.
 
-5 - Finalizaremos o primeiro dia de curso com um encontro às 17h00 para conversamos sobre a forma do curso e sobre o conteúdo dos tutoriais, além de discutirmos ajustes no programa.
+<!---  5 - Finalizaremos o primeiro dia de curso com um encontro às 17h00 para conversamos sobre a forma do curso e sobre o conteúdo dos tutoriais, além de discutirmos ajustes no programa. --->
+
+ 5 - Finalizaremos o primeiro dia de curso para conversamos sobre a forma do curso e sobre o conteúdo dos tutoriais, além de discutirmos ajustes no programa.
 
 Lembre-se: é mais importante aprender com calma do que concluir os tutoriais. Siga seu ritmo.
 
