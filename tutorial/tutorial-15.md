@@ -119,9 +119,9 @@ Agora vamos resolver alguns problemas técnicos comuns em dados brasileiros:
 # Depois convertemos para numérico com as.numeric()
 edu_rendimento <- edu_rendimento %>% 
   mutate(
-    tx_aprovacao = str_replace(tx_aprovacao, ",", ".") %>% as.numeric(),
-    tx_reprovacao = str_replace(tx_reprovacao, ",", ".") %>% as.numeric(),
-    tx_abandono = str_replace(tx_abandono, ",", ".") %>% as.numeric()
+    tx_aprovacao = as.numeric(str_replace(tx_aprovacao, ",", ".")),
+    tx_reprovacao = as.numeric(str_replace(tx_reprovacao, ",", ".")),
+    tx_abandono = as.numeric(str_replace(tx_abandono, ",", "."))
   )
 
 # Fazendo o join com municípios para ter os nomes
