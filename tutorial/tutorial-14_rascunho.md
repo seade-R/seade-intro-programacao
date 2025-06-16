@@ -109,7 +109,9 @@ library(knitr)     # Para tabelas bonitas
 ````
 
 Perceba que criamos um chunk (pedaço) de código chamado "setup" com `include=FALSE`. Isso significa que ele será executado, mas não aparecerá no relatório final. É aqui que fazemos nossas configurações iniciais.
-Cuidado: cada chunk deve ter um nome único, portanto evite reutilizar nomes em outros trechos do documento. Caso dois chunks tenham o mesmo nome, o RMarkdown pode gerar erros na hora da renderização ou executar apenas o primeiro, ignorando o restante.
+
+
+**Cuidado:** cada chunk deve ter um nome único, portanto evite reutilizar nomes em outros trechos do documento. Caso dois chunks tenham o mesmo nome, o RMarkdown pode gerar erros na hora da renderização ou executar apenas o primeiro, ignorando o restante.
 
 ## Buscando dados atualizados
 
