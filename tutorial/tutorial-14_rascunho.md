@@ -4,9 +4,9 @@
 
 Quantas vezes você já teve que gerar o mesmo relatório mensal, apenas atualizando os dados? Copiar e colar tabelas no Word, refazer gráficos no Excel, atualizar números no texto... É um trabalho tedioso e propenso a erros. E se você pudesse apertar um botão (aaaaargh! Mas esse é um botão do bem, prometo!) e ter seu relatório pronto com os dados mais recentes?
 
-Neste tutorial, vamos aprender a criar relatórios automatizados e reproduzíveis usando RMarkdown. A ideia é simples: você escreve o relatório uma vez, misturando texto e código R, e toda vez que os dados forem atualizados, você gera um novo relatório com um único comando. Mágica? Não, é programação!
+Neste tutorial, vamos aprender a criar relatórios automatizados e reproduzíveis usando RMarkdown. A ideia é simples: você escreve o relatório uma vez, misturando texto e código R, e toda vez que os dados forem atualizados, você gera um novo relatório com um único comando. 
 
-Vamos trabalhar com um caso prático: um relatório mensal de acompanhamento de indicadores municipais que precisa ser atualizado toda vez que o SEADE disponibiliza novos dados. Mas as técnicas que aprenderemos servem para qualquer situação em que você precise gerar relatórios periódicos.
+Vamos trabalhar com um caso prático: um relatório mensal de acompanhamento de indicadores municipais que precisa ser atualizado toda vez que o Seade disponibiliza novos dados. Mas as técnicas que aprenderemos servem para qualquer situação em que você precise gerar relatórios periódicos.
 
 ## O que é RMarkdown e por que você vai adorá-lo
 
@@ -48,6 +48,7 @@ output: html_document
 ```
 
 Viu aquele pedacinho de código R na data? É assim que misturamos código com texto. A data será sempre a atual quando você gerar o relatório!
+
 
 ## Preparando um relatório reproduzível
 
@@ -301,6 +302,7 @@ crontab -e
 ```
 
 2. **Adicione uma linha para executar o script**:
+
 ```bash
 # Executa todo dia 1 de cada mês às 8h da manhã
 0 8 1 * * /usr/local/bin/Rscript /home/usuario/relatorios/executar_relatorio_automatico.R >> /home/usuario/relatorios/log_execucao.txt 2>&1
@@ -397,13 +399,13 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
-```
+\```
 
 # Dados Gerais
 
 ```{r carrega-dados}
 # Coloque aqui o código para carregar seus dados
-```
+\```
 
 Os dados foram atualizados em `r format(Sys.Date(), '%d/%m/%Y')` e 
 contêm informações sobre...
@@ -430,3 +432,12 @@ O RMarkdown pode gerar:
 ## Conclusão
 
 Parabéns! Você acaba de aprender a transformar aquela tarefa chata e repetitiva em um processo completamente automatizado. Da próxima vez que seu chefe pedir "aquele relatório de sempre", você pode responder: "Ele já está na sua caixa de entrada, toda segunda-feira às 9h".
+
+## Dica de Leitura
+
+O YAML oferece diversas opções de configuração, mas neste momento abordaremos apenas os elementos essenciais. Para um estudo mais aprofundado, recomenda-se a leitura do [Capítulo 9 do *R Markdown Crash Course*](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html).
+
+Além disso, para explorar em maior profundidade as funcionalidades do R Markdown, vale consultar o [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/), que reúne uma ampla variedade de exemplos e práticas recomendadas.
+
+
+
