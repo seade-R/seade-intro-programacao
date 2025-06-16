@@ -8,7 +8,7 @@ A seguir, aprenderemos uma nova 'gramática' de R: a gramática de gráficos do 
 
 ## Roteiro
 
-0 - Às 13h30 retornamos para a segunda parte da Aula 3.
+0 - Retomaremos a segunda parte da Aula 3, começando pela análise dos desafios e esclarecimento de dúvidas.
 
 1 - Se deixou algum tutorial inacabado até aqui, comece por ele. Caso contrário, prossiga.
 
@@ -20,7 +20,7 @@ A seguir, aprenderemos uma nova 'gramática' de R: a gramática de gráficos do 
 
 ## Opcional
 
-5 - Em algum momento do curso, ou após, seria interessante ter uma exposição à gramática básica do R. Se, e somente se, você estiver confortável com a gramática do `dplyr` e houver tempo, faça (ou pelo menos comece a fazer) o [Tutorial 9](/tutorial/tutorial-09.md)
+5 - Em algum momento do curso, ou após, seria interessante ter uma exposição à gramática básica do R. Se, e somente se, você estiver confortável com a gramática do `dplyr` e houver tempo, faça (ou pelo menos comece a fazer) o [Tutorial 9](/tutorial/tutorial-09.md).
 
 ## Dicas de Leitura
 
