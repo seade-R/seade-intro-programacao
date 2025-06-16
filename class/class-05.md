@@ -70,9 +70,10 @@ Para a integração entre R e Power BI, convém ler a documentação da Microsof
 
 
 ### Atividade Opcional 
-
+  - Realize uma junção utilizando múltiplas variáveis-chave simultaneamente. No script, explique por que essa abordagem foi necessária e quais foram os desafios técnicos.
   - Exporte e visualize os resultados obtidos no Power BI usando scripts do R.
-  - Realize uma junção de bases utilizando múltiplas variáveis-chave simultaneamente. Descreva claramente no script o motivo dessa abordagem e os desafios técnicos encontrados durante o processo.
+  - Escolha um trecho da análise e converta em um relatório automatizado com RMarkdown, incluindo código e texto explicativo.
+  - Reescreva parte do seu código usando apenas funções do base R para treinar a compreensão da linguagem em baixo nível.
 
 
 ### Documentação
