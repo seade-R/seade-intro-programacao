@@ -1,10 +1,10 @@
-# Aula 5 - Bases relacionais e R + Power BI
+# Aula 5 -Bases Relacionais e o Ecossistema do R para Análise de Dados
 
 ## Objetivos Gerais
 
 Neste último encontro veremos como combinar data frames de diferentes origens que se relacionam por meio de uma ou mais variáveis chave. Utilizaremos novos verbos do dplyr, de sufixo `_join` para trabalhar com bases de dados relacionais.
 
-A seguir, veremos em pequenos vídeos como integrar R e Power BI. Finalmente, para quem estiver confortável com a linguagem, convém aprender um pouco da 'gramática' básica de R.
+A seguir, você poderá escolher um ou mais dos tutoriais opcionais, conforme seu interesse. Depois, para quem já se sentir confortável com o uso do R, vale explorar também um pouco da ‘gramática’ básica de R.
 
 ## Roteiro
 
