@@ -24,7 +24,7 @@ No primeiro encontro trabalhamos com a gramática do pacote *dplyr* para manipul
 
 7 - Assista ao [breve vídeo](https://www.youtube.com/watch?v=IRjLs5P5A9c) sobre como enviar e fazer download de arquivos no servidor de RStudio no qual estamos trabalhando.
 
-8 - Como no 1º encontro, ao final, faremos uma nova conversa coletiva na sala do Teams.
+<!--- 8 - Como no 1º encontro, ao final, faremos uma nova conversa coletiva na sala do Teams. --->
 
 ## Dica de Leitura
 
