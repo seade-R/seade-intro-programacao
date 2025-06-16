@@ -480,18 +480,4 @@ Esses recursos estão disponíveis em diferentes graus conforme o formato de sa�
 
 Parabéns! Você acaba de aprender a transformar aquela tarefa chata e repetitiva em um processo completamente automatizado. Da próxima vez que seu chefe pedir "aquele relatório de sempre", você pode responder: "Ele já está na sua caixa de entrada, toda segunda-feira às 9h".
 
-## Dica de Leitura
-
-O YAML oferece diversas opções de configuração, mas neste momento abordaremos apenas os elementos essenciais. Para um estudo mais aprofundado, recomenda-se a leitura do [Capítulo 9 do *R Markdown Crash Course*](https://zsmith27.github.io/rmarkdown_crash-course/lesson-4-yaml-headers.html).
-
-Além disso, para explorar em maior profundidade as funcionalidades do R Markdown, vale consultar o [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/) e [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/), que reúnem uma ampla variedade de exemplos e práticas recomendadas.
-
-Se desejar se aprofundar no uso de R Markdown para produção de conteúdos extensos, é possível gerar livros completos com o pacote bookdown. Recomendamos a leitura de [*bookdown: Authoring Books and Technical Documents with R Markdown*](https://bookdown.org/yihui/bookdown/).
-
-Como mencionado anteriormente, para gerar arquivos PDF com R Markdown é necessário ter o LaTeX instalado. Uma opção leve e altamente compatível com o RStudio é a distribuição **TinyTeX**, que pode ser instalada diretamente pelo R com o comando `install.packages("tinytex")`. Para mais informações sobre essa distribuição e suas vantagens, consulte [o artigo de apresentação do TinyTeX](https://yihui.org/tinytex/).
-
-O **LaTeX** é um sistema de preparação de documentos, amplamente usado para criar textos técnicos e científicos com alta qualidade tipográfica. Ao gerar arquivos PDF, o R Markdown pode utilizar comandos e funções do LaTeX para formatar o conteúdo. Você pode aprender o básico neste link: [*Learn LaTeX in 30 minutes*](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes).
-
-
-
 
