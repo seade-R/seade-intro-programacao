@@ -451,7 +451,7 @@ contêm informações sobre...
 
 1. **Use sempre URLs ou caminhos relativos** - nunca caminhos absolutos como "C:/Users/João/Desktop"
 2. **Documente suas fontes** - inclua de onde vêm os dados
-3. **Versione seu código** - use Git (falaremos disso em outro tutorial!)
+3. **Versione seu código** - use Git (falamos disso nas Dicas de Leitura da [Aula 1]!(https://github.com/seade-R/egesp-seade-intro-programacao/blob/main/class/class-01.md))
 4. **Teste com dados diferentes** - seu código deve funcionar mesmo quando os dados mudam
 5. **Mantenha logs** - você vai agradecer quando algo der errado
 6. **Teste a automação** - rode manualmente primeiro, depois automatize
