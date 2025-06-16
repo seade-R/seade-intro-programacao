@@ -26,7 +26,7 @@ O curso oferece uma iniciação à lógica de programação e ao uso da linguage
 
 [Aula 04](/class/class-04.md): **ggplot2: Gramática de gráficos** - Na segunda parte do nosso terceiro dia de curso, seguiremos com a produção de tabelas em R, agora explorando o pacote *janitor*. A seguir, e considerando que temos muitos recursos para manipular dados em R, veremos como produzir gráficos com a gramática de gráficos do pacote *ggplot2*.
 
-[Aula 05](/class/class-05.md): **Bases de dados relacionais** - Neste último encontro veremos como utilizar a gramática do *dplyr* para trabalharmos com dados relacionais. Finalmente, em um tutorial com vídeos, veremos maneiras simples de integrarmos R e Microsoft Power BI, uma ferramenta bastante utilizada na gestão pública.
+[Aula 05](/class/class-05.md): **Bases de dados relacionais** - Neste último encontro veremos como utilizar a gramática do *dplyr* para trabalharmos com dados relacionais. Em seguida, você poderá explorar tutoriais opcionais sobre integração com SQL, Power BI e geração de relatórios automatizados com RMarkdown.
 
 ## Referências bibliográficas
 
