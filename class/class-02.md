@@ -6,7 +6,9 @@ No primeiro encontro trabalhamos com a gramática do pacote *dplyr* para manipul
 
 ## Roteiro
 
-0 - Às 13h30 faremos um encontro virtual (via Teams) para falarmos dos objetivos de hoje e tirarmos dúvidas que possam ter ficado da aula anterior.
+<!--- 0 - Às 13h30 faremos um encontro virtual (via Teams) para falarmos dos objetivos de hoje e tirarmos dúvidas que possam ter ficado da aula anterior. --->
+
+0 -  Começaremos discutindo os desafios da aula passada e esclarecendo dúvidas que possam ter permanecido.
 
 1 - Se deixou algum tutorial inacabado do encontro anterior, comece por ele. Caso contrário, prossiga.
 
