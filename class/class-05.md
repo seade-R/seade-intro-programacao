@@ -61,6 +61,10 @@ O livro 'R for Data Science' tem excelente capítulo dados relacionais ([Capítu
 
 Para a integração entre R e Power BI, convém ler a documentação da Microsoft: (1) [Executar scripts do R no Power BI Desktop](https://docs.microsoft.com/pt-br/power-bi/connect-data/desktop-r-scripts); (2) [Uso do R no Editor do Power Query](https://docs.microsoft.com/pt-br/power-bi/connect-data/desktop-r-in-query-editor); (3) [Criar visuais do Power BI usando o R](https://docs.microsoft.com/pt-br/power-bi/create-reports/desktop-r-visuals).
 
+Para integração entre R e SQL, vale consultar: (1) o guia oficial do pacote DBI: [*R Interface to Databases*](https://dbi.r-dbi.org/); (2) a comparação de dialetos do DuckDB:   [*DuckDB's SQL Dialect*](https://duckdb.org/docs/stable/sql/dialect/overview),  que destaca diferenças importantes em relação ao padrão SQL, como suporte a STRUCT, MAP, UNNEST e uso avançado de funções escalares.
+
+Para aprofundar o uso do R Markdown, vale consultar: (1) o [*R Markdown: The Definitive Guide*](https://bookdown.org/yihui/rmarkdown/) e o [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/) para exemplos práticos e boas práticas; (2) o [*bookdown*](https://bookdown.org/yihui/bookdown/) para produção de documentos extensos, como livros e relatórios técnicos; (3) o [TinyTeX](https://yihui.org/tinytex/) como opção leve de LaTeX para gerar PDFs diretamente do R; (4) o guia [*Learn LaTeX in 30 minutes*](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes) para aprender o básico sobre formatação com LaTeX.
+
 
 ## Desafio: Integração e análise de bases relacionais
 
