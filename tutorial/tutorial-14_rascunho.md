@@ -50,11 +50,43 @@ output: html_document
 Viu aquele pedacinho de código R na data? É assim que misturamos código com texto. A data será sempre a atual quando você gerar o relatório!
 
 
+### Pausa para reflexão
+
+
+1) Modifique o formato de data na linha `date:` utilizando diferentes códigos de formatação. Comece substituindo `%B` por `%b`. O que muda na saída do documento?
+
+Faça o mesmo teste com:
+ - `%M`
+ - `%m`
+ - `%A`
+ - `%a`
+
+Depois, experimente acrescentar ao formato:
+
+- `%H`
+- `%I`
+- `%S`
+- `%p`
+
+Observe os efeitos de cada modificação no resultado final.
+
+2) Experimente criar outras automações no YAML.
+
+Utilize código R inline para preencher campos automaticamente. Por exemplo:
+
+```markdown
+author: "`r Sys.info()[['user']]`"
+output_file: "`r paste0('relatorio_', format(Sys.Date(), '%Y%m%d'), '.html')`"
+```
+
+Explore a possibilidade de gerar nomes de arquivos dinâmicos, preencher autor com base no sistema ou incluir informações como data e hora atual. Quais outras automações seriam úteis no seu fluxo de trabalho?
+
+
 ## Preparando um relatório reproduzível
 
 Vamos criar um relatório que analisa dados de população e emprego dos municípios paulistas. Primeiro, vamos estruturar nosso documento:
 
-```markdown
+````markdown
 # Introdução
 
 Este relatório apresenta os principais indicadores dos municípios paulistas 
@@ -74,15 +106,16 @@ library(janitor)
 library(knitr)     # Para tabelas bonitas
 ```
 
-```
+````
 
 Perceba que criamos um chunk (pedaço) de código chamado "setup" com `include=FALSE`. Isso significa que ele será executado, mas não aparecerá no relatório final. É aqui que fazemos nossas configurações iniciais.
+Cuidado: cada chunk deve ter um nome único, portanto evite reutilizar nomes em outros trechos do documento. Caso dois chunks tenham o mesmo nome, o RMarkdown pode gerar erros na hora da renderização ou executar apenas o primeiro, ignorando o restante.
 
 ## Buscando dados atualizados
 
 A grande sacada de um relatório reproduzível é buscar sempre os dados mais recentes. Vamos criar um chunk para isso:
 
-```markdown
+````markdown
 ```{r carrega-dados}
 # URL dos dados - sempre atualizado pelo SEADE
 url_populacao <- "https://raw.githubusercontent.com/seade-R/egesp-seade-intro-programacao/main/data/populacao_municipal.csv"
@@ -117,13 +150,13 @@ maiores_municipios <- pop_atual %>%
   select(localidade, populacao)
 ```
 
-```
+````
 
 ## Escrevendo o texto do relatório com valores dinâmicos
 
 Agora vem a parte legal. Vamos escrever o texto do relatório inserindo os valores calculados:
 
-```markdown
+````markdown
 ## Panorama Geral
 
 O Estado de São Paulo possui **`r total_municipios` municípios** com uma 
@@ -143,7 +176,7 @@ maiores_municipios %>%
         align = c("l", "r"))
 ```
 
-```
+````
 
 Viu como é poderoso? O texto se atualiza automaticamente com os dados!
 
@@ -151,7 +184,7 @@ Viu como é poderoso? O texto se atualiza automaticamente com os dados!
 
 Vamos criar um gráfico que sempre mostra os 10 maiores municípios:
 
-```markdown
+````markdown
 ### Distribuição Populacional
 
 ```{r grafico-populacao, fig.width=8, fig.height=6}
@@ -169,13 +202,13 @@ pop_atual %>%
   theme_minimal()
 ```
 
-```
+````
 
 ## Criando seções dinâmicas
 
 E se quisermos criar uma seção para cada região administrativa? Podemos fazer loops no RMarkdown!
 
-```markdown
+````markdown
 ## Análise por Região Administrativa
 
 ```{r analise-regioes, results='asis'}
@@ -202,7 +235,7 @@ for(reg in regioes) {
 }
 ```
 
-```
+````
 
 ## Tornando o relatório ainda mais automático
 
@@ -389,7 +422,7 @@ Vamos criar um relatório que você possa usar no seu trabalho:
 
 3. Crie a estrutura básica:
 
-```markdown
+````markdown
 ---
 title: "Seu Relatório Aqui"
 date: "`r format(Sys.Date(), '%d/%m/%Y')`"
@@ -399,18 +432,18 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
-\```
+```
 
 # Dados Gerais
 
 ```{r carrega-dados}
 # Coloque aqui o código para carregar seus dados
-\```
+```
 
 Os dados foram atualizados em `r format(Sys.Date(), '%d/%m/%Y')` e 
 contêm informações sobre...
 
-```
+````
 
 ## Dicas finais para relatórios verdadeiramente reproduzíveis
 
