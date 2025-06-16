@@ -464,6 +464,18 @@ O RMarkdown pode gerar:
 - Apresentações (sim, PowerPoint também!)
 - Dashboards interativos (com flexdashboard)
 
+
+
+Além da variedade de formatos, o R Markdown permite:
+
+- nomear e numerar tabelas e figuras automaticamente,
+- inserir e referenciar equações matemáticas,
+- incluir automaticamente as referências citadas ao longo do texto, com estilos bibliográficos padronizados,
+- criar documentos com estrutura profissional, com sumário, listas e formatação refinada.
+
+Esses recursos estão disponíveis em diferentes graus conforme o formato de saída (PDF, HTML ou Word). 
+
+
 ## Conclusão
 
 Parabéns! Você acaba de aprender a transformar aquela tarefa chata e repetitiva em um processo completamente automatizado. Da próxima vez que seu chefe pedir "aquele relatório de sempre", você pode responder: "Ele já está na sua caixa de entrada, toda segunda-feira às 9h".
