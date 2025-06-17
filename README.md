@@ -2,7 +2,7 @@
 
 Bem vindas e bem vindos ao curso de _Introdução à Programação e Ciência de Dados para a Gestão Pública_ do SEADE.
 
-Este é o repositório de instruções, tutoriais e atividades do curso. O material foi preparado para a primeira versão do curso por [Leonardo Barone](https://github.com/leobarone). Pequenas revisões foram feitas por [Thandara Santos](https://github.com/thandarasantos) e e [Lucas Mingardo](https://github.com/lumardi).
+Este é o repositório de instruções, tutoriais e atividades do curso. O material foi preparado para a primeira versão do curso por [Leonardo Barone](https://github.com/leobarone). Pequenas revisões foram feitas por [Thandara Santos](https://github.com/thandarasantos) e [Lucas Mingardo](https://github.com/lumardi).
 
 ## Informações básicas
 
