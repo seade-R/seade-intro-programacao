@@ -253,7 +253,7 @@ for(reg in regioes) {
 Para não precisar abrir o RStudio toda vez, você pode criar um script R simples:
 
 ```r
-# arquivo: gerar_relatorio.R
+# salvar arquivo como: gerar_relatorio.R
 
 # Renderiza o relatório
 rmarkdown::render(
