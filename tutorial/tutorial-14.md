@@ -367,9 +367,6 @@ Que tal fazer o relatório chegar na caixa de entrada de quem precisa?
 Antes, é preciso configurar seu cliente de email para que permita enviar emails via SMTP, que é o protocolo usado para envio automatizado de mensagens por meio do R. 
 
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
 #### Gmail
 
 1. Ative a verificação em duas etapas:
@@ -416,7 +413,6 @@ create_smtp_creds_file(
   provider = "office365"
 )
 ```
-
 
 #### Enviando com anexo e múltiplos destinatários
 
