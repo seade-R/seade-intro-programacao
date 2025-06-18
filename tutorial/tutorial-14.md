@@ -161,7 +161,7 @@ O que aconteceria se usássemos `group_by(municipio)` antes do `filter()` em `po
 
 O que aconteceria se não descrevêssemos o `locale`? Veja o [Tutorial 15](https://github.com/seade-R/egesp-seade-intro-programacao/blob/main/tutorial/tutorial-15.md) para uma explicação mais completa sobre _encodings_. 
 
-Como poderíamos filtrar diretamente o ano mais recente para `pop_atual`? Consegue imaginar uma situação onde salvar um novo objeto possa fazer mais sentido? (spoiler: ||veremos esse objeto sendo utilizado posteriormente.||)
+Como poderíamos filtrar diretamente o ano mais recente para `pop_atual`? Consegue imaginar uma situação onde salvar um novo objeto possa fazer mais sentido? (spoiler: veremos esse objeto sendo utilizado posteriormente.)
 
 ## Escrevendo o texto do relatório com valores dinâmicos
 
