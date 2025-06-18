@@ -26,9 +26,9 @@ Os tutoriais a seguir são opcionais e foram preparados para quem quiser ir alé
 Para quem se sente confortável com o uso do R e a 'gramática' do `dplyr`, pode ser interessante retomar o Tutorial 9, que apresenta conceitos da gramática básica do R.
 
 6 - [Tutorial 12](/tutorial/tutorial-12.md): Integração com Power BI.
-Neste tutorial, acompanhado de vídeos curtos, você verá as formas mais simples de integrar o R ao Power BI, permitindo importar, transformar e visualizar dados diretamente no Power BI usando scripts em R., opcional, apresenta, com acompanhamento de vídeos curtos, as maneiras mais simples de como integrar R e Power BI.
+Neste tutorial, acompanhado de vídeos curtos, você verá as formas mais simples de integrar o R ao Power BI, permitindo importar, transformar e visualizar dados diretamente no Power BI usando scripts em R.
 
-7 - 
+7 - [Tutorial 13](/tutorial/tutorial-13.md)
 
 8 - [Tutorial 14](/tutorial/tutorial-14.md): Relatórios Reproduzíveis com RMarkdown.
 Aprenda a automatizar relatórios combinando texto, código e dados atualizados em um único documento. O tutorial mostra como gerar análises dinâmicas, criar seções por grupo, agendar execuções automáticas e enviar relatórios por e-mail sem intervenção manual.
