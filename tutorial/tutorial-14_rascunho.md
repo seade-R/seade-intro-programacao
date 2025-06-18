@@ -123,7 +123,7 @@ A grande sacada de um relatório reproduzível é buscar sempre os dados mais re
 url_populacao <- "https://raw.githubusercontent.com/seade-R/egesp-seade-intro-programacao/main/data/populacao_municipal.csv"
 
 # Carregando os dados
-pop_municipios <- read_csv2(url_populacao) %>% 
+pop_municipios <- read_csv2(url_populacao, locale = locale(encoding = "Latin1")) %>% 
   clean_names()
 
 # Pegando o ano mais recente disponível
@@ -132,6 +132,7 @@ ano_mais_recente <- max(pop_municipios$ano)
 # Filtrando apenas o ano mais recente
 pop_atual <- pop_municipios %>% 
   filter(ano == ano_mais_recente)
+
 ```
 
 ## Análise automática dos dados
@@ -149,10 +150,18 @@ pop_total_estado <- pop_atual %>%
 maiores_municipios <- pop_atual %>% 
   arrange(desc(populacao)) %>% 
   slice_head(n = 5) %>% 
-  select(localidade, populacao)
+  select(municipio, populacao)
 ```
 
 ````
+
+### Para Recordar
+
+O que aconteceria se usássemos `group_by(municipio)` antes do `filter()` em `pop_atual`?
+
+O que aconteceria se não descrevêssemos o `locale`? Veja o [Tutorial 15](https://github.com/seade-R/egesp-seade-intro-programacao/blob/main/tutorial/tutorial-15.md) para uma explicação mais completa sobre _encodings_. 
+
+Como poderíamos filtrar diretamente o ano mais recente para `pop_atual`? Consegue imaginar uma situação onde salvar um novo objeto possa fazer mais sentido? (spoiler: ||veremos esse objeto sendo utilizado posteriormente.||)
 
 ## Escrevendo o texto do relatório com valores dinâmicos
 
@@ -168,7 +177,7 @@ habitantes em `r ano_mais_recente`.
 ### Maiores Municípios
 
 Os cinco maiores municípios do estado concentram 
-`r round(sum(maiores_municipios$populacao)/pop_total_estado * 100, 1)`% 
+`r round(sum(maiores_municipios$populacao)/pop_total_estado * 100, digits = 1)`% 
 da população total:
 
 ```{r tabela-maiores, results='asis'}
@@ -193,8 +202,8 @@ Vamos criar um gráfico que sempre mostra os 10 maiores municípios:
 pop_atual %>% 
   arrange(desc(populacao)) %>% 
   slice_head(n = 10) %>% 
-  mutate(localidade = fct_reorder(localidade, populacao)) %>% 
-  ggplot(aes(x = populacao, y = localidade)) +
+  mutate(municipio = fct_reorder(municipio, populacao)) %>% 
+  ggplot(aes(x = populacao, y = municipio)) +
   geom_col(fill = "steelblue") +
   scale_x_continuous(labels = scales::number_format(big.mark = ".", 
                                                    decimal.mark = ",")) +
@@ -217,8 +226,8 @@ E se quisermos criar uma seção para cada região administrativa? Podemos fazer
 # Primeiro, vamos simular uma variável de região (em dados reais você já teria isso)
 pop_atual <- pop_atual %>% 
   mutate(regiao = case_when(
-    localidade %in% c("São Paulo", "Guarulhos", "São Bernardo do Campo") ~ "Região Metropolitana",
-    localidade %in% c("Campinas", "Sorocaba", "Jundiaí") ~ "Interior Próximo",
+    municipio %in% c("São Paulo", "Guarulhos", "São Bernardo do Campo") ~ "Região Metropolitana",
+    municipio %in% c("Campinas", "Sorocaba", "Jundiaí") ~ "Interior Próximo",
     TRUE ~ "Interior"
   ))
 
@@ -256,6 +265,9 @@ rmarkdown::render(
 # Mensagem de sucesso
 cat("Relatório gerado com sucesso!\n")
 ```
+
+Caso quiser gerar o documento apenas uma vez, é possível gerar o documento manualmente através do botão _Knit_ ("tricotar")
+
 
 ## Automatizando a execução do relatório
 
@@ -350,24 +362,73 @@ A sintaxe do cron é: minuto hora dia mês dia_da_semana comando
 
 ### Enviando o relatório por e-mail automaticamente
 
-Que tal fazer o relatório chegar na caixa de entrada de quem precisa? Vamos adicionar isso ao nosso script:
+Que tal fazer o relatório chegar na caixa de entrada de quem precisa?
+
+Antes, é preciso configurar seu cliente de email para que permita enviar emails via SMTP, que é o protocolo usado para envio automatizado de mensagens por meio do R. 
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+#### Gmail
+
+1. Ative a verificação em duas etapas:
+
+   * Acesse [https://myaccount.google.com/security](https://myaccount.google.com/security)
+
+2. **Crie uma senha de aplicativo**:
+
+   - Vá para [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+   - Escolha “Outro (nome personalizado)” e digite `blastula`
+   - Copie a senha gerada
+
+3. **No R**, crie o arquivo de credenciais (basta criar uma única vez!):
 
 ```r
-# Adicione ao final do executar_relatorio_automatico.R
-
-# Instale o pacote se ainda não tiver
-# install.packages("blastula")
-
 library(blastula)
 
-# Configurar credenciais do email (faça isso uma vez)
-# create_smtp_creds_file(
-#   file = "email_creds",
-#   user = "seu_email@gmail.com",
-#   provider = "gmail"
-# )
+create_smtp_creds_file(
+  file = "email_creds",
+  user = "seu_email@gmail.com",
+  provider = "gmail"
+)
+```
 
-# Enviar email
+---
+
+#### Outlook (contas @outlook.com, @hotmail.com ou corporativas)
+
+1. **Ative a verificação em duas etapas**:
+
+   * Acesse [https://account.live.com/proofs/Manage](https://account.live.com/proofs/Manage)
+
+2. **Crie uma senha de aplicativo**:
+
+   * No mesmo link, busque por “Senhas de aplicativo”
+   * Crie e copie a senha gerada
+
+3. **No R**, execute:
+
+```r
+create_smtp_creds_file(
+  file = "email_creds",
+  user = "seu_email@outlook.com",
+  provider = "office365"
+)
+```
+
+
+#### Enviando com anexo e múltiplos destinatários
+
+Uma vez que tudo foi configurado, volte para o script `executar_relatorio_automatico.R` e inclua no fim do documento:
+
+```r
+library(blastula)
+
+# Nome do arquivo a ser enviado
+nome_arquivo <- paste0("relatorio_mensal_", format(Sys.Date(),"%B%y"))
+
+# Criar corpo do email
 email <- compose_email(
   body = md(paste0(
     "Olá,\n\n",
@@ -381,15 +442,23 @@ email <- compose_email(
     file = file.path("relatorios_gerados", nome_arquivo)
   )
 
-# Enviar
+# Enviar o e-mail
 smtp_send(
-  email,
-  to = c("destinatario1@email.com", "destinatario2@email.com"),
+  email = email,
   from = "seu_email@gmail.com",
+  to = c("destinatario1@dominio.com", "destinatario2@dominio.com"),
   subject = paste("Relatório Mensal -", format(Sys.Date(), "%B/%Y")),
   credentials = creds_file("email_creds")
 )
 ```
+
+**Se der algum erro durante o envio**, verifique:
+
+ - Se a **senha fornecida foi uma senha de aplicativo válida**
+ - Se você está **autorizado a enviar emails com esse remetente**
+ - Se a **porta SMTP está liberada** na sua rede (ou troque de rede para testar)
+ - Se o **arquivo de anexo existe** no caminho especificado
+
 
 ## Monitorando e depurando execuções automáticas
 
@@ -451,7 +520,7 @@ contêm informações sobre...
 
 1. **Use sempre URLs ou caminhos relativos** - nunca caminhos absolutos como "C:/Users/João/Desktop"
 2. **Documente suas fontes** - inclua de onde vêm os dados
-3. **Versione seu código** - use Git (falamos disso nas Dicas de Leitura da [Aula 1]!(https://github.com/seade-R/egesp-seade-intro-programacao/blob/main/class/class-01.md))
+3. **Versione seu código** - use Git (falamos disso nas Dicas de Leitura da [Aula 1](https://github.com/seade-R/egesp-seade-intro-programacao/blob/main/class/class-01.md)!)
 4. **Teste com dados diferentes** - seu código deve funcionar mesmo quando os dados mudam
 5. **Mantenha logs** - você vai agradecer quando algo der errado
 6. **Teste a automação** - rode manualmente primeiro, depois automatize
@@ -465,8 +534,7 @@ O RMarkdown pode gerar:
 - Dashboards interativos (com flexdashboard)
 
 
-
-Além da variedade de formatos, o R Markdown permite:
+Além da variedade de formatos, o R Markdown também permite:
 
 - nomear e numerar tabelas e figuras automaticamente,
 - inserir e referenciar equações matemáticas,
