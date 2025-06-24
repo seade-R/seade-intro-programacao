@@ -462,7 +462,7 @@ A escolha depende do contexto: volume de dados, infraestrutura disponível e req
 
 ## Exercícios práticos
 
-1. **Análise de performance**: Compare o tempo de execução de agregações complexas usando dplyr tradicional, duckplyr e SQL direto no DuckDB.
+1. **Análise de performance**: Compare o tempo de execução de agregações complexas usando `dplyr` tradicional, `duckplyr` e SQL direto no DuckDB.
 
 2. **Processamento sem carregar**: Utilize DuckDB para analisar um arquivo CSV grande sem carregá-lo completamente na memória.
 
