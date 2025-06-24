@@ -449,14 +449,6 @@ resultado <- dbGetQuery(con, "
 
 Essa abordagem é especialmente valiosa quando o arquivo é maior que a memória disponível.
 
-## Exercícios práticos
-
-1. **Análise de performance**: Compare o tempo de execução de agregações complexas usando dplyr tradicional, duckplyr e SQL direto no DuckDB.
-
-2. **Processamento sem carregar**: Utilize DuckDB para analisar um arquivo CSV grande sem carregá-lo completamente na memória.
-
-3. **Pipeline integrado**: Crie um fluxo que use SQLite para armazenamento persistente e DuckDB para análises rápidas.
-
 ## Conclusão
 
 Cada tecnologia apresentada tem seu nicho específico:
@@ -467,3 +459,12 @@ Cada tecnologia apresentada tem seu nicho específico:
 - **duckplyr** permite otimização com mudanças mínimas no código
 
 A escolha depende do contexto: volume de dados, infraestrutura disponível e requisitos de performance. O domínio dessas ferramentas permite trabalhar eficientemente com dados de qualquer escala.
+
+## Exercícios práticos
+
+1. **Análise de performance**: Compare o tempo de execução de agregações complexas usando dplyr tradicional, duckplyr e SQL direto no DuckDB.
+
+2. **Processamento sem carregar**: Utilize DuckDB para analisar um arquivo CSV grande sem carregá-lo completamente na memória.
+
+3. **Pipeline integrado**: Crie um fluxo que use SQLite para armazenamento persistente e DuckDB para análises rápidas.
+
