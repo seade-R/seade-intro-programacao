@@ -5,6 +5,7 @@ Chegamos ao final do nosso curso! Nos tutoriais anteriores, aprendemos diversas 
 Neste tutorial, vamos trabalhar com dados educacionais reais do Seade e você descobrirá uma verdade fundamental da ciência de dados: a maior parte do trabalho não está na análise sofisticada, mas sim na limpeza e preparação dos dados.
 
 Vamos enfrentar desafios reais como:
+
     - Problemas de encoding (acentos que aparecem como símbolos estranhos)
     - Números com vírgula em vez de ponto decimal
     - Dados que já vêm pré-agregados de formas complexas
