@@ -112,7 +112,7 @@ dbWriteTable(minha_conexao_sqlite, "rendimento_escolar", edu_rendimento)
 # Listando tabelas disponíveis
 dbListTables(minha_conexao_sqlite)
 
-# Verificando estrutura da tabela
+# Verificando estrutura da tabela, similar a names() em R
 dbListFields(minha_conexao_sqlite, "rendimento_escolar")
 ```
 
@@ -196,28 +196,95 @@ MySQL é amplamente utilizado em ambientes corporativos. A conexão requer infor
 ### Estabelecendo conexão
 
 ```r
-# Conexão básica
-minha_conexao_mysql <- dbConnect(
-  RMySQL::MySQL(),
-  host = "localhost",
-  port = 3306,
-  user = "seu_usuario",
-  password = Sys.getenv("MYSQL_PASSWORD"),  # Usar variáveis de ambiente
-  dbname = "nome_do_banco"
-)
+# NÃO RODAR - Exemplos de conexão MySQL para diferentes cenários
+# Descomente e configure apenas a conexão que você precisar usar
+
+#  CONEXÃO LOCAL (servidor na mesma máquina) 
+# minha_conexao_mysql <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = "localhost",
+#   port = 3306,
+#   user = "seu_usuario",
+#   password = Sys.getenv("MYSQL_PASSWORD"),  # Usar variáveis de ambiente
+#   dbname = "nome_do_banco"
+# )
+
+#  CONEXÃO REMOTA POR ENDEREÇO IP 
+# minha_conexao_mysql <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = "192.168.1.50",  # IP do servidor MySQL
+#   port = 3306,
+#   user = "seu_usuario",
+#   password = Sys.getenv("MYSQL_PASSWORD"),
+#   dbname = "nome_do_banco"
+# )
+
+#  CONEXÃO REMOTA POR HOSTNAME/DOMÍNIO 
+# minha_conexao_mysql <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = "mysql-server.empresa.com",  # Hostname ou FQDN
+#   port = 3306,
+#   user = "seu_usuario",
+#   password = Sys.getenv("MYSQL_PASSWORD"),
+#   dbname = "nome_do_banco"
+# )
+
+#  EXEMPLO COM SERVIDOR EM NUVEM 
+# minha_conexao_cloud <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = "mysql-instance.us-east-1.rds.amazonaws.com",  # RDS AWS
+#   port = 3306,
+#   user = "admin_user",
+#   password = Sys.getenv("MYSQL_PASSWORD"),
+#   dbname = "producao_db"
+# )
+
+#  CONEXÃO COM PORTA PERSONALIZADA 
+# minha_conexao_custom <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = "10.0.0.100",  # IP interno da rede corporativa
+#   port = 3307,          # Porta personalizada
+#   user = "analytics_user",
+#   password = Sys.getenv("MYSQL_PASSWORD"),
+#   dbname = "warehouse_db"
+# )
 ```
 
 ### Boas práticas de segurança
 
+A segurança das credenciais de banco de dados é fundamental em ambientes corporativos. Nunca inclua senhas diretamente no código, pois isso pode levar a vazamentos acidentais quando o código for compartilhado, versionado no Git ou visualizado por outras pessoas. As variáveis de ambiente oferecem uma camada de proteção ao manter as credenciais separadas do código-fonte.
+
+Além disso, essa prática facilita a migração entre ambientes (desenvolvimento, teste, produção) sem necessidade de alterar o código, apenas as variáveis de ambiente. Em equipes de desenvolvimento, cada pessoa pode ter suas próprias credenciais configuradas localmente, enquanto servidores de produção usam credenciais específicas do ambiente.
+
 ```r
 # Configurar variável de ambiente antes de executar o R:
 # export MYSQL_PASSWORD="sua_senha"
-
 # No código, usar:
 password = Sys.getenv("MYSQL_PASSWORD")
+
+# Exemplo com configurações de segurança adicionais:
+# minha_conexao_segura <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = "mysql-server.empresa.com",
+#   port = 3306,
+#   user = Sys.getenv("MYSQL_USER"),      # Usuário também em variável
+#   password = Sys.getenv("MYSQL_PASSWORD"),
+#   dbname = Sys.getenv("MYSQL_DB"),      # Nome do banco em variável
+#   ssl.ca = "/path/to/ca-cert.pem",      # Certificado SSL
+#   timeout = 10                          # Timeout de conexão
+# )
+
+# Sempre fechar a conexão quando terminar
+# dbDisconnect(minha_conexao_segura)
 ```
 
-Nunca coloque senhas diretamente no código. Variáveis de ambiente protegem informações sensíveis.
+Outras boas práticas de segurança:
+  - Usar conexões SSL quando disponível
+  - Configurar timeout de conexão
+  - Fechar conexões após o uso
+  - Usar usuários com privilégios mínimos necessários
+
+
 
 ### Operações com MySQL
 
@@ -234,13 +301,11 @@ As operações são idênticas ao SQLite; a principal diferença está na conex�
 
 ## DuckDB: Banco de dados analítico
 
-DuckDB é otimizado para análise de dados, oferecendo performance superior para operações analíticas e capacidade de ler arquivos diretamente.
+DuckDB é um novo dialeto SQL moderno, especialmente otimizado para análise de dados. Oferece performance superior (10-100x mais rápido que bancos tradicionais), arquitetura colunar para análises, zero configuração necessária, e capacidade de ler arquivos diretamente sem ETL.
 
 ### Configuração inicial
 
 ```r
-library(duckdb)
-
 # Conexão em memória
 minha_conexao_duckdb <- dbConnect(duckdb())
 
@@ -253,15 +318,14 @@ A conexão em memória é perfeita para análises temporárias. Use arquivo quan
 ### Métodos de transferência de dados
 
 ```r
-# Método 1: Cópia física dos dados
-dbWriteTable(minha_conexao_duckdb, "edu_table", edu_rendimento)
+# Criar conexão em memória
+minha_conexao_duckdb <- dbConnect(duckdb())
 
-# Método 2: Referência virtual (mais eficiente)
-duckdb_register(minha_conexao_duckdb, "edu_view", edu_rendimento)
+# Criar conexão persistente em arquivo (similar ao que vimos com o SQLite)
+minha_conexao_duckdb2 <- dbConnect(duckdb(), dbdir = "meu_banco.duckdb")
 
-# Ambos podem ser consultados igualmente
-dbGetQuery(minha_conexao_duckdb, "SELECT COUNT(*) FROM edu_table")
-dbGetQuery(minha_conexao_duckdb, "SELECT COUNT(*) FROM edu_view")
+# Sempre fechar a conexão quando terminar
+# dbDisconnect(minha_conexao_duckdb2)
 ```
 
 A diferença é crucial: `dbWriteTable()` duplica os dados dentro do banco, ocupando memória adicional. Já `duckdb_register()` cria apenas um 'atalho' para o data frame original - ideal quando os dados já estão no R e queremos apenas consultá-los com SQL.
@@ -271,25 +335,30 @@ A diferença é crucial: `dbWriteTable()` duplica os dados dentro do banco, ocup
 A grande vantagem do DuckDB é que ele pode processar arquivos sem carregá-los na memória. Isso é extremamente importante para grandes volumes de dados. 
 
 ```r
+# Instalar a extensão httpfs para ler URLs
+db_exec(minha_conexao_duckdb, "INSTALL httpfs")
+db_exec(minha_conexao_duckdb, "LOAD httpfs")
+# também funciona com o 'dbExecute' que aprendemos do DBI!
+
 # Processando CSV diretamente
 resultado_csv <- dbGetQuery(minha_conexao_duckdb, "
   SELECT 
     dep_adm,
     COUNT(*) as total,
     AVG(CAST(REPLACE(tx_aprovacao, ',', '.') AS DOUBLE)) as media
-  FROM read_csv_auto('https://repositorio.seade.gov.br/dataset/1532141b-bff2-4e23-84a7-519a635a5d3b/resource/6d7d84a7-9e74-43dc-bea9-231eec2179a2/download/educacao_rendimento.csv')
+  FROM read_csv(
+    'https://repositorio.seade.gov.br/dataset/1532141b-bff2-4e23-84a7-519a635a5d3b/resource/6d7d84a7-9e74-43dc-bea9-231eec2179a2/download/educacao_rendimento.csv',
+    delim = ';',            # Delimitador ponto e vírgula para formato brasileiro
+    encoding = 'latin-1',   # encoding latin-1 para acentos em português brasileiro
+    header = true           # usar a primeira linha (o "header") como nome das variáveis
+  )
   WHERE dep_adm IN ('Estadual', 'Municipal')
   GROUP BY dep_adm
 ")
-
-# Leitura de arquivos Parquet
-# dbGetQuery(minha_conexao_duckdb, "
-#   SELECT * FROM read_parquet('dados/*.parquet')
-#   WHERE ano = 2023
-# ")
 ```
 
-O `read_csv_auto()` é uma função especial do DuckDB que lê e processa arquivos sem carregá-los no R. Isso economiza memória e tempo, especialmente com arquivos grandes. O DuckDB detecta automaticamente o delimitador, encoding e tipos de dados.
+O `read_csv_auto()` é uma função especial do DuckDB que lê e processa arquivos sem carregá-los no R. Isso economiza memória e tempo, especialmente com arquivos grandes.
+Usualmente, o DuckDB detecta automaticamente o delimitador, encoding e tipos de dados; porém é mais seguro descrevê-los manualmente, quando possível. 
 
 ### Integração com dplyr
 
@@ -346,7 +415,7 @@ O pacote duckplyr acelera operações dplyr usando DuckDB internamente:
 library(duckplyr)
 
 # Convertendo para formato otimizado
-flights_duck <- as_duckplyr_df(flights)
+flights_duck <- as_duckdb_tibble(flights)
 
 # Código dplyr padrão, execução otimizada
 resultado <- flights_duck %>%
@@ -381,6 +450,7 @@ dados_grandes <- tibble(
 )
 
 # Benchmark com dplyr padrão
+#install.packages("tictoc") # para marcação de tempo
 library(tictoc)
 tic()
 resultado_dplyr <- dados_grandes %>%
@@ -407,47 +477,211 @@ resultado_duck <- dados_duck %>%
 tempo_duck <- toc()
 ```
 
-## Boas práticas
+## Analisando dados maiores que a memória
 
-### 1. Gerenciamento de conexões
+Uma das grandes vantagens do duckplyr é sua capacidade de trabalhar com dados que não cabem na memória RAM do seu computador. Isso é especialmente útil quando você precisa analisar arquivos gigantescos - aqueles que fariam o R travar ou simplesmente não conseguiriam ser carregados.
 
-```r
-# Usar on.exit() em funções para garantir fechamento
-processar_dados <- function() {
-  con <- dbConnect(duckdb())
-  on.exit(dbDisconnect(con, shutdown = TRUE))
-  
-  # Processamento aqui
-}
+### Por que isso é importante?
+
+Imagine que você tem um arquivo CSV de 50 GB com dados de vendas de uma empresa multinacional. Com dplyr tradicional, você precisaria:
+1. Tentar carregar tudo na memória (provavelmente travaria)
+2. Dividir o arquivo em pedaços menores manualmente
+3. Processar cada pedaço separadamente
+4. Juntar os resultados depois
+
+Com duckplyr, você simplesmente aponta para o arquivo e trabalha normalmente, como se fosse um data frame pequeno. O DuckDB cuida de toda a complexidade por você.
+
+### Exemplo prático: dados de voos
+
+Vamos trabalhar com uma versão estendida do dataset `nycflights13`, que está disponível como arquivos Parquet remotos. Esses arquivos contêm dados de voos de 2022 a 2024, com milhões de registros distintos.
+
+```{r}
+# Definindo as URLs dos arquivos Parquet
+year <- 2022:2024
+base_url <- "https://blobs.duckdb.org/flight-data-partitioned/"
+files <- paste0("Year=", year, "/data_0.parquet")
+urls <- paste0(base_url, files)
+
+# Vamos ver o que temos
+tibble(urls)
 ```
 
-O `on.exit()` garante que a conexão seja fechada mesmo se houver erros durante o processamento.
+### Configurando a extensão httpfs
 
-### 2. Eficiência de memória
+Para ler arquivos diretamente da internet, precisamos da extensão `httpfs` do DuckDB:
 
-```r
-# Preferir referências virtuais para dados grandes
-# Em vez de: dbWriteTable(con, "tabela", dados_grandes)
-# Usar: duckdb_register(con, "tabela", dados_grandes)
+```{r}
+# Instalando e carregando a extensão (caso ainda não tenha feito)
+#db_exec("INSTALL httpfs")
+#db_exec("LOAD httpfs")
+
+# Criando uma "conexão" com os arquivos remotos
+flights <- read_parquet_duckdb(urls)
 ```
 
-### 3. Processamento direto de arquivos
+O `read_parquet_duckdb()` é uma função especial que cria uma referência aos arquivos Parquet sem baixá-los. É como criar um "atalho" que permite trabalhar com os dados como se fossem um data frame comum, mas que na verdade estão armazenados remotamente.
 
-```r
-# Em vez de carregar e processar:
-# dados <- read_csv("arquivo_grande.csv")
-# resultado <- dados %>% group_by(x) %>% summarise(n = n())
+### Explorando os dados sem carregá-los
 
-# Processar diretamente:
-con <- dbConnect(duckdb())
-resultado <- dbGetQuery(con, "
-  SELECT x, COUNT(*) as n 
-  FROM read_csv_auto('arquivo_grande.csv')
-  GROUP BY x
-")
+Uma característica importante: por padrão, o duckplyr protege sua memória evitando materializar resultados muito grandes automaticamente:
+
+```{r}
+# Isso vai dar erro propositalmente para proteger sua memória
+nrow(flights)
+# Error: Materialization would result in more than 9090 rows. Use collect() or as_tibble() to materialize.
 ```
 
-Essa abordagem é especialmente valiosa quando o arquivo é maior que a memória disponível.
+Mas podemos ver a estrutura dos dados:
+
+```{r}
+# Visualizando os primeiros registros (busca apenas algumas linhas)
+flights
+
+# Contando registros por ano (operação de agregação, resultado pequeno)
+flights %>%
+  count(Year)
+```
+
+Observe que a contagem funciona normalmente porque o resultado é pequeno (apenas 3 linhas), mas tentar acessar todas as linhas de uma vez é bloqueado para proteger sua memória.
+
+### Realizando análises complexas
+
+Agora vem a mágica: podemos fazer análises complexas em milhões de registros como se fosse um data frame normal:
+
+```{r}
+# Análise de atrasos por ano e mês
+resultado_voos <- flights %>%
+  mutate(InFlightDelay = ArrDelay - DepDelay) %>%
+  summarise(
+    .by = c(Year, Month),
+    atraso_medio_voo = mean(InFlightDelay, na.rm = TRUE),
+    atraso_mediano_voo = median(InFlightDelay, na.rm = TRUE),
+    total_voos = n()
+  ) %>%
+  filter(Year < 2024) %>%  # Excluindo 2024 por estar incompleto
+  arrange(Year, Month)
+
+# Visualizando o plano de execução (opcional, mas interessante)
+resultado_voos %>% explain()
+```
+
+O `explain()` mostra como o DuckDB vai executar a consulta. Note que ele:
+- Só lê as colunas necessárias (`Year`, `Month`, `DepDelay`, `ArrDelay`)
+- Aplica filtros diretamente nos arquivos (`Year < 2024`)
+- Só processa 2 dos 3 arquivos (porque 2024 é excluído)
+
+### Coletando os resultados
+
+Quando estamos satisfeitos com nossa análise, usamos `collect()` para trazer os resultados finais para a memória:
+
+```{r}
+# Medindo o tempo de execução
+system.time({
+  resultado_final <- resultado_voos %>% collect()
+})
+
+# Visualizando resultados
+head(resultado_final, 10)
+```
+
+Impressionante! Analisamos milhões de registros em segundos, processando apenas os dados necessários e trazendo para a memória apenas o resultado final (24 linhas, no caso).
+
+### Trabalhando com arquivos locais
+
+O mesmo princípio funciona com arquivos no seu computador:
+
+```{r}
+# Exemplo com arquivos locais (não execute se não tiver os arquivos)
+# flights_local <- read_parquet_duckdb("dados/voos_*.parquet")
+# 
+# # Ou com CSVs
+# vendas_grandes <- read_csv_duckdb("dados/vendas_2024_*.csv")
+# 
+# # Análise normal
+# vendas_por_regiao <- vendas_grandes %>%
+#   group_by(regiao, mes) %>%
+#   summarise(
+#     vendas_totais = sum(valor_venda),
+#     ticket_medio = mean(valor_venda),
+#     .groups = "drop"
+#   ) %>%
+#   collect()
+```
+
+### Estratégias para dados muito grandes
+
+Quando trabalhando com dados gigantescos, algumas dicas importantes:
+
+1. **Filtre cedo**: Use `filter()` o mais cedo possível na pipeline para reduzir o volume de dados processados.
+
+```{r}
+# Bom: filtra logo no início
+resultado <- flights %>%
+  filter(Year == 2023, Month %in% 6:8) %>%  # Só verão de 2023
+  group_by(Origin, Dest) %>%
+  summarise(voos_totais = n()) %>%
+  collect()
+
+# Ruim: filtra depois de processar tudo
+# resultado <- flights %>%
+#   group_by(Origin, Dest) %>%
+#   summarise(voos_totais = n()) %>%
+#   filter(voos_totais > 1000) %>%  # Muito tarde!
+#   collect()
+```
+
+2. **Selecione apenas colunas necessárias**: Se o dataset tem 100 colunas mas você só precisa de 5, selecione apenas essas 5.
+
+```{r}
+# Eficiente: só as colunas que vamos usar
+flights %>%
+  select(Year, Month, Origin, Dest, DepDelay, ArrDelay) %>%
+  filter(Year == 2023) %>%
+  # ... resto da análise
+  collect()
+```
+
+3. **Agregue antes de coletar**: Sempre que possível, reduza os dados no servidor antes de trazer para o R.
+
+```{r}
+# Bom: agrega primeiro, depois coleta resultado pequeno
+resumo <- flights %>%
+  filter(Year == 2023) %>%
+  group_by(Month) %>%
+  summarise(
+    total_voos = n(),
+    atraso_medio = mean(DepDelay, na.rm = TRUE)
+  ) %>%
+  collect()  # Só 12 linhas vêm para a memória
+
+# Evite: trazer milhões de linhas para depois agregar no R
+# dados_brutos <- flights %>% 
+#   filter(Year == 2023) %>% 
+#   collect()  # Milhões de linhas!
+# resumo <- dados_brutos %>% group_by(...) # Muito lento
+```
+
+### Limitações importantes
+
+O duckplyr tem algumas limitações com dados remotos que é importante conhecer:
+
+1. **Funções não suportadas**: Nem todas as funções do dplyr funcionam com DuckDB. Quando isso acontece, há fallback automático para dplyr, mas isso pode ser lento com dados grandes.
+
+2. **Ordem dos resultados**: Por padrão, os resultados podem vir em ordem diferente do dplyr tradicional (por questões de performance). Se a ordem importa, use `arrange()` explicitamente.
+
+3. **Materialização automática**: Para proteger sua memória, resultados muito grandes não são materializados automaticamente. Use `collect()` conscientemente.
+
+### Quando usar esta abordagem
+
+Esta estratégia de análise é ideal quando você tem:
+
+- **Arquivos muito grandes** (> 1GB) que não cabem confortavelmente na memória
+- **Múltiplos arquivos** que você quer analisar como um conjunto único
+- **Dados remotos** que você não quer ou não pode baixar completamente
+- **Análises que resultam em dados pequenos** (agregações, sumários, etc.)
+
+A combinação duckplyr + arquivos remotos é perfeita para o mundo moderno, onde os dados ficam cada vez maiores mas nossa necessidade geralmente é extrair informações específicas, não carregando tudo na memória.
+
 
 ## Conclusão
 
