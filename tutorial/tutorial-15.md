@@ -11,7 +11,7 @@ Vamos enfrentar desafios reais como:
   - Dados que já vêm pré-agregados de formas complexas
   - Valores missing que têm significado importante
 
-Este é apenas o começo da jornada em análise de dados. Para ir além, estudar estatística é fundamental - aqui veremos apenas o básico sobre correlações e regressões. Mas o importante é entender o processo: como um analista pensa ao receber dados bagunçados e precisa transformá-los em insights.
+Este é apenas o começo da jornada em análise de dados. Para ir além, estudar estatística é fundamental - aqui veremos apenas o básico sobre correlações e regressões. Mas o importante é entender o processo: como um analista pensa ao receber dados bagunçados e precisa transformá-los em conhecimento.
 
 Vamos começar carregando os pacotes necessários:
 
