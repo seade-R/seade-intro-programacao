@@ -317,7 +317,7 @@ Por fim, vale destacar algumas boas práticas adicionais de segurança:
 As operações com MySQL seguem a mesma lógica utilizada para o SQLite. A principal diferença está na etapa de conexão, que exige o uso de credenciais (como host, usuário e senha), conforme mostramos anteriormente. Uma vez conectados, é possível listar tabelas, executar comandos SQL diretamente ou integrar com o `dplyr` para manipulação mais fluida.
 
 
-### Conexões com bancos SQL além do MySQL
+## Conexões com demais bancos SQL
 
 Além do MySQL, é comum se deparar com outros sistemas de bancos de dados relacionais. Abaixo mostramos como estabelecer conexões com alguns dos mais utilizados. A manipulação posterior (listar tabelas, executar queries SQL ou usar `dplyr`) segue a mesma lógica para todos os casos.
 
