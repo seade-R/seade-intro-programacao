@@ -793,7 +793,7 @@ A combinação duckplyr + arquivos remotos é perfeita para o mundo moderno, ond
 Cada tecnologia apresentada tem seu nicho específico:
 
 - **SQLite** é ideal para desenvolvimento local e prototipagem
-- **MySQL** atende necessidades de sistemas corporativos
+- **MySQL, MariaDB** e afins atende necessidades de sistemas corporativos
 - **DuckDB** oferece performance superior para análise de dados
 - **duckplyr** permite otimização com mudanças mínimas no código
 
