@@ -120,7 +120,7 @@ O `dbWriteTable()` cria uma nova tabela no banco de dados com a estrutura do dat
 
 ### Executando consultas SQL
 
-SQL (Structured Query Language) é a linguagem padrão para consultar bancos de dados. As principais cláusulas são:
+SQL (Structured Query Language) é a linguagem padrão para consultar bancos de dados. As principais cláusulas para consumo de dados são:
 - `SELECT`: escolhe quais colunas retornar
 - `FROM`: indica de qual tabela buscar
 - `WHERE`: filtra linhas com base em condições
