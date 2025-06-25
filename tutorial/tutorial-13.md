@@ -319,7 +319,7 @@ As operações com MySQL seguem a mesma lógica utilizada para o SQLite. A princ
 
 ## Conexões com demais bancos SQL
 
-Além do MySQL, é comum se deparar com outros sistemas de bancos de dados relacionais. Abaixo mostramos como estabelecer conexões com alguns dos mais utilizados. A manipulação posterior (listar tabelas, executar queries SQL ou usar `dplyr`) segue a mesma lógica para todos os casos.
+Além do MySQL e SQLite, é comum se deparar com outros sistemas de bancos de dados relacionais. Abaixo mostramos como estabelecer conexões com alguns dos mais utilizados. A manipulação posterior (listar tabelas, executar queries SQL ou usar `dplyr`) segue a mesma lógica para todos os casos.
 
 #### MariaDB
 
