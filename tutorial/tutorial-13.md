@@ -314,12 +314,99 @@ Por fim, vale destacar algumas boas práticas adicionais de segurança:
 # dbDisconnect(minha_conexao_mysql)
 ```
 
-As operações são idênticas ao SQLite; a principal diferença está na conexão inicial. 
+As operações com MySQL seguem a mesma lógica utilizada para o SQLite. A principal diferença está na etapa de conexão, que exige o uso de credenciais (como host, usuário e senha), conforme mostramos anteriormente. Uma vez conectados, é possível listar tabelas, executar comandos SQL diretamente ou integrar com o `dplyr` para manipulação mais fluida.
+
+
+### Conexões com bancos SQL além do MySQL
+
+Além do MySQL, é comum se deparar com outros sistemas de bancos de dados relacionais. Abaixo mostramos como estabelecer conexões com alguns dos mais utilizados. A manipulação posterior (listar tabelas, executar queries SQL ou usar `dplyr`) segue a mesma lógica para todos os casos.
+
+#### MariaDB
+
+```r
+# install.packages("RMariaDB")
+library(RMariaDB)
+
+minha_conexao_mariadb <- dbConnect(
+  RMariaDB::MariaDB(),
+  host = rstudioapi::askForPassword("Insira o host"),
+  port = 3306,
+  user = rstudioapi::askForPassword("Insira seu usuário"),
+  password = rstudioapi::askForPassword("Insira sua senha"),
+  dbname = "nome_do_banco"
+)
+```
+
+#### PostgreSQL
+
+```r
+# install.packages("RPostgres")
+library(RPostgres)
+
+minha_conexao_pg <- dbConnect(
+  RPostgres::Postgres(),
+  host = rstudioapi::askForPassword("Insira o host"),
+  port = 5432,
+  user = rstudioapi::askForPassword("Insira seu usuário"),
+  password = rstudioapi::askForPassword("Insira sua senha"),
+  dbname = "nome_do_banco"
+)
+```
+
+#### SQL Server (Microsoft)
+
+```r
+# install.packages("odbc")
+library(odbc)
+
+minha_conexao_sqlserver <- dbConnect(
+  odbc::odbc(),
+  Driver   = "SQL Server",
+  Server   = rstudioapi::askForPassword("Insira o servidor"),
+  Database = "nome_do_banco",
+  UID      = rstudioapi::askForPassword("Insira seu usuário"),
+  PWD      = rstudioapi::askForPassword("Insira sua senha"),
+  Port     = 1433
+)
+```
+
+#### Oracle
+
+```r
+# install.packages("odbc")
+library(odbc)
+
+minha_conexao_oracle <- dbConnect(
+  odbc::odbc(),
+  Driver = "Oracle",
+  DBQ    = rstudioapi::askForPassword("Insira o endereço do banco"),
+  UID    = rstudioapi::askForPassword("Insira seu usuário"),
+  PWD    = rstudioapi::askForPassword("Insira sua senha")
+)
+```
+
+
+Em todos esses casos, uma vez criada a conexão, as operações são semelhantes:
+
+```r
+# dbListTables(minha_conexao)
+# dbGetQuery(minha_conexao, "SELECT * FROM tabela LIMIT 10")
+# tbl(minha_conexao, "tabela") %>% filter(...) %>% collect()
+# dbDisconnect(minha_conexao)
+```
+
+Lembre-se de sempre finalizar sua sessão com `dbDisconnect()` para liberar os recursos da conexão.
 
 
 ## DuckDB: Banco de dados analítico
 
-DuckDB é um novo dialeto SQL moderno, especialmente otimizado para análise de dados. Oferece performance superior (10-100x mais rápido que bancos tradicionais), arquitetura colunar para análises, zero configuração necessária, e capacidade de ler arquivos diretamente sem ETL.
+
+Por fim, vale destacar o **DuckDB**, um banco de dados relacional projetado especificamente para análise de dados em ambiente local. Desenvolvido a partir de 2019, o DuckDB tem ganhado reconhecimento na comunidade de ciência de dados pela sua combinação de simplicidade operacional, alto desempenho e integração nativa com linguagens como R e Python.
+
+O principal diferencial do DuckDB reside na sua arquitetura: ele consegue processar arquivos diretamente do disco — incluindo formatos como CSV, Parquet, JSON e Excel — **sem exigir que os dados sejam carregados previamente na memória**. Esta capacidade permite análises de conjuntos de dados extensos mesmo em máquinas com recursos limitados, evitando problemas de memória insuficiente e reduzindo consideravelmente o tempo entre a pergunta analítica e sua resposta. Além disso, funciona como uma biblioteca embarcada, executando dentro do próprio processo do R sem depender de servidores externos ou configurações complexas.
+
+Outro aspecto relevante é sua **abordagem estendida ao SQL**. Embora mantenha total compatibilidade com comandos SQL padrão, o DuckDB oferece extensões e funções especializadas que atendem às necessidades específicas dos analistas de dados. Essas funcionalidades ampliam as possibilidades analíticas diretamente em SQL, proporcionando uma experiência mais integrada e eficiente. A documentação completa dessas extensões está disponível em duckdb.org/docs/stable/sql/dialect/overview, oferecendo um guia detalhado para utilizar adequadamente a ferramenta.
+
 
 ### Configuração inicial
 
