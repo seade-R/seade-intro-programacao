@@ -278,12 +278,30 @@ password = Sys.getenv("MYSQL_PASSWORD")
 # dbDisconnect(minha_conexao_segura)
 ```
 
-Outras boas práticas de segurança:
+
+A função `Sys.getenv()` permite acessar variáveis de ambiente configuradas na máquina local. Essas variáveis são úteis, por exemplo, para armazenar credenciais ou caminhos de diretórios de forma segura.
+Você pode aprender a configurar variáveis de ambiente nos seguintes sistemas operacionais: [Windows](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc736637(v=ws.10)?redirectedfrom=MSDN) e para [MacOS](https://forum.macmagazine.com.br/topic/221523-tutorial-como-criar-vari%C3%A1veis-de-ambiente-no-macos/).
+
+Alternativamente, caso você esteja utilizando o RStudio (incluindo o RStudio Server usado neste curso), é possível utilizar a função `rstudioapi::askForPassword()` para solicitar informações sensíveis de forma interativa e sem exibição direta no console. Apesar do nome, essa função pode ser usada para qualquer tipo de entrada textual (como host, usuário, etc.), não apenas senhas:
+
+```r
+# minha_conexao_mysql <- dbConnect(
+#   RMySQL::MySQL(),
+#   host = rstudioapi::askForPassword("Insira o host"),
+#   port = 3306,
+#   user = rstudioapi::askForPassword("Insira seu usuário"),
+#   password = rstudioapi::askForPassword("Insira sua senha"),
+#   dbname = "nome_do_banco"
+# )
+```
+
+Essa abordagem é útil em ambientes interativos, pois evita que as credenciais fiquem visíveis no código ou console.
+
+Por fim, vale destacar algumas boas práticas adicionais de segurança:
   - Usar conexões SSL quando disponível
   - Configurar timeout de conexão
   - Fechar conexões após o uso
   - Usar usuários com privilégios mínimos necessários
-
 
 
 ### Operações com MySQL
