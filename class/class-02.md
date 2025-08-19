@@ -22,7 +22,7 @@ No primeiro encontro trabalhamos com a gramática do pacote *dplyr* para manipul
 
 5 - Em seguida, comece o [Tutorial 4](/tutorial/tutorial-04.md) sobre operadores relacionais e lógicos e controle de fluxo.
 
-6 - Assista ao [breve vídeo](https://www.youtube.com/watch?v=IRjLs5P5A9c) sobre como enviar e fazer download de arquivos no servidor de RStudio no qual estamos trabalhando.
+6 - Assista ao [breve vídeo](https://www.youtube.com/watch?v=IRjLs5P5A9c) sobre como enviar e fazer download de arquivos no servidor de RStudio no qual estamos trabalhando. Esse passo não é necessário caso você esteja rodando rodando o RStudio em sua máquina local.
 
 <!--- 8 - Como no 1º encontro, ao final, faremos uma nova conversa coletiva na sala do Teams. --->
 
