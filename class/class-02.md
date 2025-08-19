@@ -14,7 +14,9 @@ No primeiro encontro trabalhamos com a gramática do pacote *dplyr* para manipul
 
 2 - Assista ao breve vídeo sobre como gerenciar projetos no RStudio: <https://www.youtube.com/watch?v=ukU9iNkPX60&t=3s>. Uma boa dica de leitura sobre o assunto (opcional e para o final da manhã de hoje: <https://curso-r.github.io/zen-do-r/rproj-dir.html#diret%C3%B3rio-de-trabalho>).
 
-3 - Em seguida, leia os dois materiais a seguir sobre boas práticas na redação de códigos: (i) a [seção 1.5](http://electionsbr.com/livro/introducao-ao-r.html#criando-objetos) do livro *Usando R: um guia para cientistas políticos*; e o [capítulo 4](https://r4ds.had.co.nz/workflow-basics.html) do livro *R for Data Science*.
+<!--- 3 - Em seguida, os dois materiais a seguir sobre boas práticas na redação de códigos: (i) a [seção 1.5](http://electionsbr.com/livro/introducao-ao-r.html#criando-objetos) do livro *Usando R: um guia para cientistas políticos*; e o [capítulo 4](https://r4ds.had.co.nz/workflow-basics.html) do livro *R for Data Science*. --->
+
+3 - Em seguida, leia o material a seguir sobre boas práticas na redação de códigos: [capítulo 4](https://r4ds.had.co.nz/workflow-basics.html) do livro *R for Data Science*.
 
 4 - A seguir vá para o [Tutorial 3](/tutorial/tutorial-03.md). Nele você aprenderá um pouco mais sobre data frames, vetores e operações matemáticas em R. Este tutorial trata dos fundamentos da manipulação de dados da gramática do pacote `base`, que veremos em paralelo à do `dplyr`.
 
