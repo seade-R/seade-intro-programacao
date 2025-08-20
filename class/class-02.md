@@ -32,7 +32,14 @@ No primeiro encontro trabalhamos com a gramática do pacote *dplyr* para manipul
 
 Uma boa leitura para acompanhar este pedaço do curso são as partes II e III do livro [*Hands-on Programming With R*](https://rstudio-education.github.io/hopr/), de Garret Grolemund.
 
-Em seguida, para aprender boas práticas na redação de códigos é sugerido o [capítulo 4](https://r4ds.had.co.nz/workflow-basics.html) do livro *R for Data Science*.
+Em seguida, para aprender boas práticas na redação de códigos é sugerido o [capítulo 4](https://r4ds.had.co.nz/workflow-basics.html) do livro *R for Data Science*, caso ainda não tenha terminado durante a aula.
+
+Caso queira praticar mais os condicionais que vimos durante a aula, recomendo a leitura dos seguintes textos:
+   
+   - Para aprofundar em If, If else e ˋìfelse()ˋ veja o [seguinte tutorial](https://analisereal.com/2016/03/02/programacao-no-r-if-if-else-e-ifelse-2/) (em português).
+   - Para aprofundar em loops ˋfor{}ˋ e discussão de vetorização em R, veja o [seguinte tutorial](https://analisereal.com/2016/02/27/loops-no-r-usando-o-for-2/) (em português) ou [Capítulo 11.3](https://rstudio-education.github.io/hopr/loops.html#for-loops) do Hands of Programming with R (em inglês).
+   - Para loops ˋwhile{}ˋ veja o [Capítulo 11.4](https://rstudio-education.github.io/hopr/loops.html#while-loops) do Hands on Programming with R (em inglês).
+			- Para expandir o conhecimento em funções, veja o [seguinte tutorial](https://analisereal.com/2015/04/04/funcoes-definicao-argumentos-e-operadores-binarios/) (em português) ou o  [Capítulo 25](https://r4ds.hadley.nz/functions.html) do R for Data Science (em inglês).
 
 
 ## Desafio: Aplicação de lógica condicional
