@@ -36,9 +36,12 @@ Em seguida, para aprender boas práticas na redação de códigos é sugerido o 
 
 Caso queira praticar mais os condicionais que vimos durante a aula, recomendo a leitura dos seguintes textos:
    
-   - Para aprofundar em If, If else e ˋìfelse()ˋ veja o [seguinte tutorial](https://analisereal.com/2016/03/02/programacao-no-r-if-if-else-e-ifelse-2/) (em português).
-   - Para aprofundar em loops ˋfor{}ˋ e discussão de vetorização em R, veja o [seguinte tutorial](https://analisereal.com/2016/02/27/loops-no-r-usando-o-for-2/) (em português) ou [Capítulo 11.3](https://rstudio-education.github.io/hopr/loops.html#for-loops) do Hands of Programming with R (em inglês).
-   - Para loops ˋwhile{}ˋ veja o [Capítulo 11.4](https://rstudio-education.github.io/hopr/loops.html#while-loops) do Hands on Programming with R (em inglês).
+   - Para aprofundar em If, If else e ìfelse() veja o [seguinte tutorial](https://analisereal.com/2016/03/02/programacao-no-r-if-if-else-e-ifelse-2/) (em português).
+
+   - Para aprofundar em loops for{} e discussão de vetorização em R, veja o [seguinte tutorial](https://analisereal.com/2016/02/27/loops-no-r-usando-o-for-2/) (em português) ou [Capítulo 11.3](https://rstudio-education.github.io/hopr/loops.html#for-loops) do Hands of Programming with R (em inglês).
+
+   - Para loops while{} veja o [Capítulo 11.4](https://rstudio-education.github.io/hopr/loops.html#while-loops) do Hands on Programming with R (em inglês).
+
 			- Para expandir o conhecimento em funções, veja o [seguinte tutorial](https://analisereal.com/2015/04/04/funcoes-definicao-argumentos-e-operadores-binarios/) (em português) ou o  [Capítulo 25](https://r4ds.hadley.nz/functions.html) do R for Data Science (em inglês).
 
 
